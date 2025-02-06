@@ -1,15 +1,9 @@
-# Title
+## project description
 
-## Description
+## how to build and use the code
 
-## Goal
+## how to contribute
 
-## Dataset
+## how to test the code
 
-## Modeling Method
-
-## Visualization
-
-## Test Plan
-
-https://gallettilance.github.io/final_project/
+## what environment it’s supported in
