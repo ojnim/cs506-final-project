@@ -9,12 +9,12 @@ Based on the data inspection result, I formed one question I want to explore thr
 
 **In Language Control task, how would self-reported language proficiency score be related to the activation of brain region and reaction time?**
 
-In addition to the project question, there are several goals I want to achieve.
+In addition to the project question, there are several goals I want to achieve on a personal level.
+
+Regarding the fMRI data from Cognitive Control task, I would form a research question after I compare the data from Language Control task during data cleaning process.
 
 1. Understand how Language and Cognitive activity works together for the tasks that require both
 2. Gain experience with processing fMRI image data
-
-Regarding the fMRI data from Cognitive Control task, I would form a research question after I compare the data from Language Control task during data cleaning process.
 
 ## Dataset
 The dataset that would be used in this project would be "An fMRI dataset for investigating language control and cognitive control in bilinguals" https://github.com/OpenNeuroDatasets/ds005455/tree/main
@@ -37,16 +37,29 @@ Cognitive Control : 'pressing the same direction'
 
 
 ## Modeling Method, Visualization, and Test Plan
-Considering the self-reported language proficiency score is an interval variabe, I am considering to use linear regression model primarily. 
+Because the self-reported language proficiency score is an interval variabe, I am considering to use linear regression model primarily. 
 
 For training model, I would use 80% of the data (~62 people), and I would use remaining 20% (15 people) to test model.
 
 
-## To-Dos
+## Steps
 1. Data Inspection & Understanding
-2. Data Cleaning
+Since I do not have a background on neuroscience, I would spend most of my time learning how to process fMRI data and use for analysis.
+
+**Reference**
+fMRI short course with fsl https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html
+Machine learning in fMRI https://www.ehu.eus/ccwintco/uploads/f/f5/Feature_extraction_uji_2010.pdf
+
+
+2. Data Cleaning 
+* Handle missing data
+
 3. Feature Extraction
+* Normalization of fMRI data
+
 4. Model Training
+* Linear regression with language proficiency score and features from normalized fMRI data
+
 5. Result Interpretation
 
 
