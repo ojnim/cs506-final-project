@@ -2,11 +2,7 @@
 
 ## Description
 
-This project aims to understand the relationship between language and cognition in the perspective of neuroscience. functional MRI data shows brain activity by detecting changes in blood flow in different areas of the brain.
-
-This project would 
-language level and how language switch is affecting cognitive 
-
+This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how much language and cognitive activity are interconnected and influence each other when people are performing the task which requires both ability. 
 
 ## Question & Goal
 Based on the data inspection result, I formed one question I want to explore through final project.
@@ -41,14 +37,22 @@ Cognitive Control : 'pressing the same direction'
 
 
 ## Modeling Method, Visualization, and Test Plan
-As least 1 at most 3.
+Considering the self-reported language proficiency score is an interval variabe, I am considering to use linear regression model primarily. 
 
-## To-Do
-1. Data Understanding
+For training model, I would use 80% of the data (~62 people), and I would use remaining 20% (15 people) to test model.
+
+
+## To-Dos
+1. Data Inspection & Understanding
 2. Data Cleaning
+3. Feature Extraction
+4. Model Training
+5. Result Interpretation
 
 
 ## Back Up Plan (Dataset)
+Just in case the project contains a problem which prevents the completion, I would use the data below and plan new project.
+
 General Language Understanding
 https://www.kaggle.com/datasets/thedevastator/nli-dataset-for-sentence-understanding?select=qnli_train.csv
 
