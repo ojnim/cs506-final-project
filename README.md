@@ -5,9 +5,9 @@
 This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how much language and cognitive activity are interconnected and influence each other when people are performing the task which requires both ability. 
 
 ## Question & Goal
-Based on the data inspection result, I formed one question I want to explore through final project.
+Based on the simple data inspection result, I formed one question I want to explore through final project.
 
-**In Language Control task, how would self-reported language proficiency score be related to the activation of brain region and reaction time?**
+**In Language Control task, how would self-reported language proficiency score and Age of English Acquirement be related to the activation of brain region and reaction time?**
 
 In addition to the project question, there are several goals I want to achieve on a personal level.
 
@@ -19,15 +19,19 @@ Regarding the fMRI data from Cognitive Control task, I would form a research que
 ## Dataset
 The dataset that would be used in this project would be "An fMRI dataset for investigating language control and cognitive control in bilinguals" https://github.com/OpenNeuroDatasets/ds005455/tree/main
 
-This dataset is consisted of 77 Chinese-English bilingual's fMRI experiment result and participants data. Each participant completed two tasks during the experiment : language switching task to assess language control and rule switching task to evaluate cognitive control. 
+This dataset is consisted of 77 Chinese-English bilingual's fMRI experiment result and participants data. While undergoing functional MRI scanning, each participant completed two tasks : <br>
+1. Language Control : 'naming in L1'<br>
+Images are suggested to the participants, and they were asked to name what's in the image. <br>
+2. Cognitive Control : 'pressing the same direction'<br>
+The image of right or left arrow is suggested to the participants, and they were asked to press the button in the same direction.
 
-This repository ( https://github.com/GttNeuro/Guo-Lab_datapaper ) contains information about the language control task and cognitive control task.
+The further information about the tasks can be found in this repository https://github.com/GttNeuro/Guo-Lab_datapaper 
 
-Language Control : 'naming in L1'
--suggest image and name it
+language switching task to assess language control and rule switching task to evaluate cognitive control. 
 
-Cognitive Control : 'pressing the same direction'
--press
+
+
+Within this dataset, I would specify the features to use through normalization
 
 1. structual imaging data
 
@@ -48,6 +52,7 @@ Since I do not have a background on neuroscience, I would spend most of my time 
 
 **Reference**
 fMRI short course with fsl https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html
+
 Machine learning in fMRI https://www.ehu.eus/ccwintco/uploads/f/f5/Feature_extraction_uji_2010.pdf
 
 
