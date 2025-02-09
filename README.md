@@ -18,7 +18,7 @@ In addition to the research question, there are several goals I want to achieve 
 ## Dataset
 The dataset that would be used in this project would be "An fMRI dataset for investigating language control and cognitive control in bilinguals" https://github.com/OpenNeuroDatasets/ds005455/tree/main
 
-This dataset consists of fMRI experimental results and participant data from 77 Chinese-English bilinguals. During functional MRI scanning, each participant completed two tasks: : <br>
+This dataset consists of fMRI experimental results and participant data from 77 Chinese-English bilinguals. During functional MRI scanning, each participant completed two tasks: <br>
 1. Language Control : 'naming in L1'<br>
 Participants were shown images and asked to name the object in their first language (L1). <br>
 2. Cognitive Control : 'pressing the same direction'<br>
@@ -34,13 +34,18 @@ Further details about these tasks are available in https://github.com/GttNeuro/G
 3. behavioral data from the participants - participant responses and performance metrics
 
 
-## Modeling Method, Visualization, and Test Plan
-Since the self-reported language proficiency score is an interval variable, I plan to use a linear regression model as the primary approach.<br>
-For model training, I will:
+## Modeling Method, Visualization, and Test/Evaluation Plan
+Since the self-reported language proficiency score is an interval variable, I plan to use a **linear regression model** as the primary approach.
+
+For **model training and testing**, I will:
 * Use 80% of the data (~62 participants) for training.
 * Use 20% of the data (15 participants) for testing.
 
-Followings are the candidates for data visualization 
+For the evaluation of model,
+* Mean Squared Error : measures the average squared differences between actual and predicted values
+* R-squared Score : indicates the proportion of variance in the dependent variable explained by the model
+
+Followings are the candidates for **data visualization** 
 * Scatter Plots : relationships between self-reported proficiency, age of acquisition, and reaction time
 * Heatmap : correlation matrices between different brain regions and behavioral metrics
 * Boxplots/Violin Plots : compare brain activation intensities across different language proficiency levels
