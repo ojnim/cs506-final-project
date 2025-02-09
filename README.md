@@ -4,7 +4,7 @@
 
 This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how language and cognitive activity are interconnected and influence each other when individuals perform tasks requiring both abilities. 
 
-## Question & Goal
+## Research Question & Goals
 Based on the preliminary data inspection, I formulated the following research question for my final project:
 
 **In the Language Control task, how do self-reported language proficiency scores and Age of English Acquisition relate to brain region activation and reaction time?**
@@ -26,21 +26,25 @@ Participants were shown right or left arrows and asked to press a button corresp
 
 Further details about these tasks are available in https://github.com/GttNeuro/Guo-Lab_datapaper 
 
-Within this dataset, I would specify the features to use through normalization
+**Data**
+1. structual imaging data(anatomical)
 
-1. structual imaging data
-
-2. task-related functional imaging data
+2. task-related functional imaging data(functional)
 
 3. behavioral data from the participants - participant responses and performance metrics
 
 
 ## Modeling Method, Visualization, and Test Plan
-Since the self-reported language proficiency score is an interval variable, I plan to use a linear regression model as the primary approach.
-
+Since the self-reported language proficiency score is an interval variable, I plan to use a linear regression model as the primary approach.<br>
 For model training, I will:
 * Use 80% of the data (~62 participants) for training.
 * Use 20% of the data (15 participants) for testing.
+
+Followings are the candidates for data visualization 
+* Scatter Plots : relationships between self-reported proficiency, age of acquisition, and reaction time
+* Heatmap : correlation matrices between different brain regions and behavioral metrics
+* Boxplots/Violin Plots : compare brain activation intensities across different language proficiency levels
+* Dimensionality Reduction : demonstrate patterns in high-dimensional fMRI data<br>
 
 
 ## Steps
