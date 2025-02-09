@@ -38,10 +38,10 @@ Further details about these tasks are available in https://github.com/GttNeuro/G
 Since the self-reported language proficiency score is an interval variable, I plan to use a **linear regression model** as the primary approach.
 
 For **model training and testing**, I will:
-* Use 80% of the data (~62 participants) for training.
+* Use 80% of the data (62 participants) for training.
 * Use 20% of the data (15 participants) for testing.
 
-For the evaluation of model,
+For the **evaluation** of model,
 * Mean Squared Error : measures the average squared differences between actual and predicted values
 * R-squared Score : indicates the proportion of variance in the dependent variable explained by the model
 
@@ -53,26 +53,29 @@ Followings are the candidates for **data visualization**
 
 
 ## Steps
-1. Data Inspection & Understanding
-Since I do not have a background on neuroscience, I would spend most of my time learning how to process fMRI data and use for analysis.
+1. Data Inspection & Understanding <br>
+Since I do not have a background on neuroscience, I expect to spend about 2~3 weeks learning how to process fMRI data and use for analysis.
 
-**Reference**
+**Reference** <br>
 fMRI short course with fsl https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html
 
 Machine learning in fMRI https://www.ehu.eus/ccwintco/uploads/f/f5/Feature_extraction_uji_2010.pdf
 
 
-2. Data Cleaning 
+2. Data Cleaning <br>
 * Handle missing data
-
-3. Feature Extraction
 * Normalization of fMRI data
 
-4. Model Training
-* Linear regression with language proficiency score and features from normalized fMRI data
+3. Feature Extraction<br>
+* Extract relevant features from structural and task-related functional imaging data
+* Process behavioral data (e.g. reaction times, error rate, task_order, task_rule )
 
-5. Result Interpretation
+4. Model Training<br>
+* Apply linear regression using language proficiency scores, Age of English Acquisition, and extracted fMRI features
+* Optimize the model with evaluation
 
+5. Result Interpretation<br>
+* Visualiza key findings using statistical plots and brain activation maps
 
 ## Back Up Plan (Dataset)
 Just in case the project contains a problem which prevents the completion, I would use the data below and plan new project.
