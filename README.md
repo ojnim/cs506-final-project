@@ -2,34 +2,29 @@
 
 ## Description
 
-This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how much language and cognitive activity are interconnected and influence each other when people are performing the task which requires both ability. 
+This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how language and cognitive activity are interconnected and influence each other when individuals perform tasks requiring both abilities. 
 
 ## Question & Goal
-Based on the simple data inspection result, I formed one question I want to explore through final project.
+Based on the preliminary data inspection, I formulated the following research question for my final project:
 
-**In Language Control task, how would self-reported language proficiency score and Age of English Acquirement be related to the activation of brain region and reaction time?**
+**In the Language Control task, how do self-reported language proficiency scores and Age of English Acquisition relate to brain region activation and reaction time?**
 
-In addition to the project question, there are several goals I want to achieve on a personal level.
+Additionally, I intend to develop a research question regarding the fMRI data from the Cognitive Control task after comparing it with the Language Control task data during the data cleaning process.
 
-Regarding the fMRI data from Cognitive Control task, I would form a research question after I compare the data from Language Control task during data cleaning process.
-
+In addition to the research question, there are several goals I want to achieve on a personal level.
 1. Understand how Language and Cognitive activity works together for the tasks that require both
-2. Gain experience with processing fMRI image data
+2. Gain experience in processing fMRI image data
 
 ## Dataset
 The dataset that would be used in this project would be "An fMRI dataset for investigating language control and cognitive control in bilinguals" https://github.com/OpenNeuroDatasets/ds005455/tree/main
 
-This dataset is consisted of 77 Chinese-English bilingual's fMRI experiment result and participants data. While undergoing functional MRI scanning, each participant completed two tasks : <br>
+This dataset consists of fMRI experimental results and participant data from 77 Chinese-English bilinguals. During functional MRI scanning, each participant completed two tasks: : <br>
 1. Language Control : 'naming in L1'<br>
-Images are suggested to the participants, and they were asked to name what's in the image. <br>
+Participants were shown images and asked to name the object in their first language (L1). <br>
 2. Cognitive Control : 'pressing the same direction'<br>
-The image of right or left arrow is suggested to the participants, and they were asked to press the button in the same direction.
+Participants were shown right or left arrows and asked to press a button corresponding to the same direction.
 
-The further information about the tasks can be found in this repository https://github.com/GttNeuro/Guo-Lab_datapaper 
-
-language switching task to assess language control and rule switching task to evaluate cognitive control. 
-
-
+Further details about these tasks are available in https://github.com/GttNeuro/Guo-Lab_datapaper 
 
 Within this dataset, I would specify the features to use through normalization
 
@@ -41,9 +36,11 @@ Within this dataset, I would specify the features to use through normalization
 
 
 ## Modeling Method, Visualization, and Test Plan
-Because the self-reported language proficiency score is an interval variabe, I am considering to use linear regression model primarily. 
+Since the self-reported language proficiency score is an interval variable, I plan to use a linear regression model as the primary approach.
 
-For training model, I would use 80% of the data (~62 people), and I would use remaining 20% (15 people) to test model.
+For model training, I will:
+* Use 80% of the data (~62 participants) for training.
+* Use 20% of the data (15 participants) for testing.
 
 
 ## Steps
