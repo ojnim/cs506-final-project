@@ -1,87 +1,75 @@
 # Language and Cognition : the neural relationship
 
-## Description
+## Preliminary Visualization of Data
 
-This project aims to understand the relationship between language and cognition in the perspective of neuroscience. Specifically, I want to study how language and cognitive activity are interconnected and influence each other when individuals perform tasks requiring both abilities. 
+## Data Overview
+The dataset consists of 77 subjects, and for each subject, 
+* anatomical image - a brain image that serves as a structural reference for processing functional images
+* functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
 
-## Research Question & Goals
-Based on the preliminary data inspection, I formulated the following research question for my final project:
+## Data Processing Method
 
-**In the Language Control task, how do self-reported language proficiency scores and Age of English Acquisition relate to brain region activation and reaction time?**
+### Brain Data
+In data processing, I used FEAT, FSL's preprocessing tool. FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
 
-Additionally, I intend to develop a research question regarding the fMRI data from the Cognitive Control task after comparing it with the Language Control task data during the data cleaning process.
+Detailed description of data processing done so far.
 
-In addition to the research question, there are several goals I want to achieve on a personal level.
-1. Understand how Language and Cognitive activity works together for the tasks that require both
-2. Gain experience in processing fMRI image data
+1. Brain Extraction
 
-## Dataset
-The dataset that would be used in this project would be "An fMRI dataset for investigating language control and cognitive control in bilinguals" https://github.com/OpenNeuroDatasets/ds005455/tree/main
+Since the original image includes skull and non-brain area, we need to remove those area to focus on brain tissue. FSL has brain extraction tool for preprocessing the data.
 
-This dataset consists of fMRI experimental results and participant data from 77 Chinese-English bilinguals. During functional MRI scanning, each participant completed two tasks: <br>
-1. Language Control : 'naming in L1'<br>
-Participants were shown images and asked to name the object in their first language (L1). <br>
-2. Cognitive Control : 'pressing the same direction'<br>
-Participants were shown right or left arrows and asked to press a button corresponding to the same direction.
+One variable I experimented with was Fractional intensity threshold, which decides the brain outline estimate and how much to remove. The default value is 0.5, and smaller values give larger brain outline estimate. Among 0.7, 0.5, 0.3, 0.2, and 0.1, the value 0.2 resulted the best skullstripped image with removing skull and not missing brain tissue.
 
-Further details about these tasks are available in https://github.com/GttNeuro/Guo-Lab_datapaper 
+* original data 
 
-**Data**
-1. structual imaging data(anatomical)
-
-2. task-related functional imaging data(functional)
-
-3. behavioral data from the participants - participant responses and performance metrics
+* data after bet (Fractional Intensity Threshold = 0.2)
 
 
-## Modeling Method, Visualization, and Test/Evaluation Plan
-Since the self-reported language proficiency score is an interval variable, I plan to use a **linear regression model** as the primary approach.
+2. Motion Correction
 
-For **model training and testing**, I will:
-* Use 80% of the data (62 participants) for training.
-* Use 20% of the data (15 participants) for testing.
+3. Slice - Timing Correction
 
-For the **evaluation** of model,
-* Mean Squared Error : measures the average squared differences between actual and predicted values
-* R-squared Score : indicates the proportion of variance in the dependent variable explained by the model
+None
 
-Followings are the candidates for **data visualization** 
-* Scatter Plots : relationships between self-reported proficiency, age of acquisition, and reaction time
-* Heatmap : correlation matrices between different brain regions and behavioral metrics
-* Boxplots/Violin Plots : compare brain activation intensities across different language proficiency levels
-* Dimensionality Reduction : demonstrate patterns in high-dimensional fMRI data<br>
+4. Smoothing
+
+Spatial smoothing FWMH (mm) : default 5.0
+
+5. Registration and Normalization
+
+Degree of Freedom
+
+source: https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_04_Preprocessing.html
+
+### Behavioral Data
+
+## Data Modeling Method
+Detailed description of data modeling methods used so far.
+
+## Preliminary results
+Preliminary results. 
+(e.g. we fit a linear model to the data and we achieve promising results, 
+or we did some clustering and we notice a clear pattern in the data)
+
+We expect to see preliminary code in your project repo at this point.
 
 
-## Steps
-1. Data Inspection & Understanding <br>
-Since I do not have a background on neuroscience, I expect to spend about 2~3 weeks learning how to process fMRI data and use for analysis.
+## Next Steps
+
+Feature Extraction<br>
+* Extract relevant features from structural and task-related functional imaging data
+* Process behavioral data (e.g. reaction times, error rate, task_order, task_rule )
+
+Model Training<br>
+* Apply linear regression using language proficiency scores, Age of English Acquisition, and extracted fMRI features
+* Optimize the model with evaluation
+
+Result Interpretation<br>
+* Visualiza key findings using statistical plots and brain activation maps
+
+
 
 **Reference** <br>
 fMRI short course with fsl https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html
 
 Machine learning in fMRI https://www.ehu.eus/ccwintco/uploads/f/f5/Feature_extraction_uji_2010.pdf
-
-
-2. Data Cleaning <br>
-* Handle missing data
-* Normalization of fMRI data
-
-3. Feature Extraction<br>
-* Extract relevant features from structural and task-related functional imaging data
-* Process behavioral data (e.g. reaction times, error rate, task_order, task_rule )
-
-4. Model Training<br>
-* Apply linear regression using language proficiency scores, Age of English Acquisition, and extracted fMRI features
-* Optimize the model with evaluation
-
-5. Result Interpretation<br>
-* Visualiza key findings using statistical plots and brain activation maps
-
-## Back Up Plan (Dataset)
-Just in case the project contains a problem which prevents the completion, I would use the data below and plan new project.
-
-General Language Understanding
-https://www.kaggle.com/datasets/thedevastator/nli-dataset-for-sentence-understanding?select=qnli_train.csv
-
-Stanford Natural Language Inference
-https://www.kaggle.com/datasets/stanfordu/stanford-natural-language-inference-corpus
