@@ -79,16 +79,18 @@ Post-stats
 * Z threshold: 3.1
 * P threshold: 0.05
 
-Followings are the results from the 1st-level analysis of brain data with sub-001 of Cognitive Control
+**RESULT**
+
+* Followings are the results from the 1st-level analysis of brain data with sub-001 of Cognitive Control
 
 Time series graph of BOLD. Left is Switch and Right is Not Switch <br>
 ![image info](./images/DesignMatrix.png)
 
-The result from the general linear model<br>
+* The result from the general linear model<br>
 The red line(data) is the original BOLD graph, and green(cope partial model fit) and blue(full model fit) lines are the results of the GLM. 
 ![image info](./images/1st-level_analysis.png)
 
-Red areas in the following image are the voxels which are statistically significant for each contrast <br>
+* Red areas in the following image are the voxels which are statistically significant for each contrast <br>
 ![image info](./images/voxel_activation.png)
 
 ### Behavior / Participants Data
@@ -97,76 +99,76 @@ For midterm report, I focused on analyzing the correlation between various parti
 
 ![image info](./images/AoA.png)
 
-AoA & English skills Correlation: 
-'AoA & English_writing': -0.1444502987593527, 
-'AoA & English_listening': -0.15784105846389884, 
-'AoA & English_speaking': -0.030329450569710547, 
-'AoA & English_reading': -0.15499353085527676, 
-'AoA & raven_score': -0.35462051263438893, 
-'AoA & CET_4_score': -0.23428551589392765
+AoA & English skills Correlation: <br>
+'AoA & English_writing': -0.1444502987593527, <br>
+'AoA & English_listening': -0.15784105846389884, <br>
+'AoA & English_speaking': -0.030329450569710547, <br>
+'AoA & English_reading': -0.15499353085527676, <br>
+'AoA & raven_score': -0.35462051263438893, <br>
+'AoA & CET_4_score': -0.23428551589392765 <br>
 
 ![image info](./images/AoARavenCET.png)
 
-Raven Score & CET 4 Score Correlation: 'raven_score & CET_4_score': 0.233705913960944
+Raven Score & CET 4 Score Correlation: 'raven_score & CET_4_score': 0.233705913960944 <br>
 
-RTL1S_Chinese_correlation: 
-'RT_L1S & Chinese_writing': -0.17181157875905817,
-'RT_L1S & Chinese_listening': -0.13034266083903212, 
-'RT_L1S & Chinese_speaking': -0.19216220392790564, 
-'RT_L1S & Chinese_reading': -0.049387453437041456
-
-
-RTL1NS_Chinese_correlation:  
-'RT_L1NS & Chinese_writing': -0.14431948221685217, 
-'RT_L1NS & Chinese_listening': -0.10066014422042956, 
-'RT_L1NS & Chinese_speaking': -0.13552622556975719, 
-'RT_L1NS & Chinese_reading': -0.05409748262747915
+RTL1S_Chinese_correlation: <br>
+'RT_L1S & Chinese_writing': -0.17181157875905817, <br>
+'RT_L1S & Chinese_listening': -0.13034266083903212, <br>
+'RT_L1S & Chinese_speaking': -0.19216220392790564, <br>
+'RT_L1S & Chinese_reading': -0.049387453437041456<br>
 
 
-RTL2S_English_correlation: 
-'RT_L2S & English_writing': -0.15608745106689872, 
-'RT_L2S & English_listening': -0.26285325959694766, 
-'RT_L2S & English_speaking': -0.249225000279765, 
-'RT_L2S & English_reading': -0.07517967683065574
+RTL1NS_Chinese_correlation:  <br>
+'RT_L1NS & Chinese_writing': -0.14431948221685217, <br>
+'RT_L1NS & Chinese_listening': -0.10066014422042956, <br>
+'RT_L1NS & Chinese_speaking': -0.13552622556975719, <br>
+'RT_L1NS & Chinese_reading': -0.05409748262747915<br>
 
 
-RTL2NS_English_correlation: 
-'RT_L2NS & English_writing': -0.13785607761363033, 
-'RT_L2NS & English_listening': -0.22679407408979357, 
-'RT_L2NS & English_speaking': -0.23930748130690666, 
-'RT_L2NS & English_reading': -0.0905329915511562
+RTL2S_English_correlation: <br>
+'RT_L2S & English_writing': -0.15608745106689872, <br>
+'RT_L2S & English_listening': -0.26285325959694766, <br>
+'RT_L2S & English_speaking': -0.249225000279765, <br>
+'RT_L2S & English_reading': -0.07517967683065574<br>
+
+
+RTL2NS_English_correlation: <br>
+'RT_L2NS & English_writing': -0.13785607761363033, <br>
+'RT_L2NS & English_listening': -0.22679407408979357, <br>
+'RT_L2NS & English_speaking': -0.23930748130690666, <br>
+'RT_L2NS & English_reading': -0.0905329915511562<br>
 
 ![image info](./images/RavenRT.png)
 
-raven_RT_correlations: 
-'raven_score & RT_L1S': -0.10192948032642571, 
-'raven_score & RT_L1NS': -0.1627018508981041, 
-'raven_score & RT_L2S': -0.21882178716367187, 
-'raven_score & RT_L2NS': -0.21413055014757756
+raven_RT_correlations: <br>
+'raven_score & RT_L1S': -0.10192948032642571, <br>
+'raven_score & RT_L1NS': -0.1627018508981041, <br>
+'raven_score & RT_L2S': -0.21882178716367187, <br>
+'raven_score & RT_L2NS': -0.21413055014757756<br>
 
 ![image info](./images/RavenER.png)
 
-raven_ER_correlations: 
-'raven_score & ER_L1S': -0.027472844891422755, 
-'raven_score & ER_L1NS': -0.04825089641629403, 
-'raven_score & ER_L2S': -0.2367312466937776, 
-'raven_score & ER_L2NS': -0.23652282254830348
+raven_ER_correlations: <br>
+'raven_score & ER_L1S': -0.027472844891422755, <br>
+'raven_score & ER_L1NS': -0.04825089641629403, <br>
+'raven_score & ER_L2S': -0.2367312466937776, <br>
+'raven_score & ER_L2NS': -0.23652282254830348<br>
 
 ![image info](./images/CET4RT.png)
 
-cet_4_RT_correlations: 
-'CET_4_score & RT_L1S': 0.02146256794702048, 
-'CET_4_score & RT_L1NS': 0.031085003279216688, 
-'CET_4_score & RT_L2S': -0.053926295229138145, 
-'CET_4_score & RT_L2NS': -0.07319903667206928
+cet_4_RT_correlations: <br>
+'CET_4_score & RT_L1S': 0.02146256794702048, <br>
+'CET_4_score & RT_L1NS': 0.031085003279216688, <br>
+'CET_4_score & RT_L2S': -0.053926295229138145, <br>
+'CET_4_score & RT_L2NS': -0.07319903667206928<br>
 
 ![image info](./images/CET4ER.png)
 
-cet_4_ER_correlations: 
-'CET_4_score & ER_L1S': -0.09920154371578252, 
-'CET_4_score & ER_L1NS': -0.10498877572452256, 
-'CET_4_score & ER_L2S': -0.24290970386183677, 
-'CET_4_score & ER_L2NS': -0.272698476085984
+cet_4_ER_correlations: <br>
+'CET_4_score & ER_L1S': -0.09920154371578252, <br>
+'CET_4_score & ER_L1NS': -0.10498877572452256, <br>
+'CET_4_score & ER_L2S': -0.24290970386183677, <br>
+'CET_4_score & ER_L2NS': -0.272698476085984<br>
 
 
 From this data analysis, the patterns I observed are
