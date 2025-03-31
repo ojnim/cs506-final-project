@@ -36,42 +36,62 @@ Followings are the setting values for preprocessing
 Summary registration, FMRI to standard space <br>
 ![image info](./images/registration.png)
 
-
 source: https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_04_Preprocessing.html
 
+### Behavioral / Participant Data
 
-### Behavioral Data
-
-1. Missing Data handeling
-
-Since there wasn't null value in behavioral data, this step was skipped
-
-2. Processing data for Correlation matrix
-
-To apply correlation function, columns were grouped into different categories, such as Language_RT, Language_ER, chinese_skills, english_skills
-
+Since the data is already cleaned and preprocessed by the data uploader and the null value was not found in the dataset, the original data was used for the analysis.
 
 **More info about data can be found in data_inspection.ipynb**
 
 ## Data Modeling Method
-Detailed description of data modeling methods used so far.
+
+1. The General Linear Model - for brain data
+
+With a GLM, we can use one ore more regressors, or independent variables, to fit a model to some outcome measure, or dependent variable. To do this we compute numbers called beta weights, which are the relative weights assigned to each regressor to best fit the data. Any discrepancies between the model and the data are called residuals.
+
+In FEAT analysis, the number of EV(Explanatory Variables) would be the number of regressors, and other settings, such as Basic shape, Convolution, Phase, temporal derivative, temporal filtering, would influence on beta weights and residuals for the general linear modeling.
+
+2. Correlation
+
+Correlation analysis is used to measure the strength and direction of the relationship between different variables. In this study, correlation analysis was performed to assess the relationships between cognitive scores, language proficiency measures, and reaction times. Pearson correlation coefficients were computed to quantify these relationships, providing insights into potential dependencies among variables.
+
+For instance, correlations were examined between Raven's Progressive Matrices scores and English proficiency measures (writing, listening, speaking, and reading), as well as between CET 4 scores and the same language skills. Additionally, age of acquisition (AoA) was correlated with various language and cognitive measures to investigate its impact on learning outcomes. 
+
+This method helps in selecting relevant features for further modeling and understanding the underlying structure of the data before applying more complex analytical techniques.
 
 ## Preliminary Results & Visualization of Data
 
 ### Brain Data
-Followings are the resuls from the 1st-level analysis of brain data with sub-001 of Cognitive Control
+Stats
+* Number of original EVs:2
+* EV1: SWITCH, EV2: NOTSWITCH
+* Basic shape: Custom (3 column format)
+* Convolution: Double_Gamma HRF
+* Phase: 0
+* NO temporal derivative, temporal filtering
 
-* Time series graph of BOLD. Left is Switch and Right is Not Switch <br>
+Contrasts & F-tests
+* Contrast: 1, F-tests: 0
+
+Post-stats
+* Thresholding: Cluster
+* Z threshold: 3.1
+* P threshold: 0.05
+
+Followings are the results from the 1st-level analysis of brain data with sub-001 of Cognitive Control
+
+Time series graph of BOLD. Left is Switch and Right is Not Switch <br>
 ![image info](./images/DesignMatrix.png)
 
+The result from the general linear model<br>
+The red line(data) is the original BOLD graph, and green(cope partial model fit) and blue(full model fit) lines are the results of the GLM. 
 ![image info](./images/1st-level_analysis.png)
 
 Red areas in the following image are the voxels which are statistically significant for each contrast <br>
 ![image info](./images/voxel_activation.png)
 
 ### Behavior / Participants Data
-
-![image info](./images/AoARavenCET.png)
 
 For midterm report, I focused on analyzing the correlation between various participant data variables to identify the most relevant features for modeling with brain data. Below, I summarize the key correlation patterns observed in the dataset.
 
@@ -84,6 +104,10 @@ AoA & English skills Correlation:
 'AoA & English_reading': -0.15499353085527676, 
 'AoA & raven_score': -0.35462051263438893, 
 'AoA & CET_4_score': -0.23428551589392765
+
+![image info](./images/AoARavenCET.png)
+
+Raven Score & CET 4 Score Correlation: 'raven_score & CET_4_score': 0.233705913960944
 
 RTL1S_Chinese_correlation: 
 'RT_L1S & Chinese_writing': -0.17181157875905817,
@@ -160,9 +184,7 @@ From this data analysis, the patterns I observed are
 
 1. Preprocess the remaining dataset with the same setting
 
-bash script to run the analysis
-
-the result would be the basis of the group analysis
+The preprocessing is only done with sub-001. We need to apply preprocessing with the same setting to the reamining 76 subjects. I would write bash script to run the preprocessing and 1st-level analysis. The result would be the basis of the group analysis
 
 2. Feature Extraction
 
