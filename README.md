@@ -105,7 +105,7 @@ AoA showed negative correlations with all English skills, with the strongest eff
 
 ![image info](./images/AoARavenCET.png)
 
-Raven Score & CET 4 Score Correlation: 'raven_score & CET_4_score': 0.233705913960944 <br>
+Raven Score & CET 4 Score Correlation: 0.233705913960944 <br>
 
 * Chinese Langauge RT Correlations <br>
 Both RT_L1S and RT_L1NS exhibited negative correlations with Chinese language skills. The strongest effects were seen in speaking (-0.1922 for RT_L1S, -0.1355 for RT_L1NS) and writing (-0.1718 for RT_L1S, -0.1443 for RT_L1NS), indicating that faster reaction times may be associated with better proficiency in Chinese. Reading was the least correlated.
@@ -113,44 +113,23 @@ Both RT_L1S and RT_L1NS exhibited negative correlations with Chinese language sk
 * English Langauge RT Correlations <br>
 RT_L2S and RT_L2NS negatively correlated with English skills, particularly in listening (-0.2629 for RT_L2S, -0.2268 for RT_L2NS) and speaking (-0.2492 for RT_L2S, -0.2393 for RT_L2NS). This suggests that faster reaction times are linked to better English proficiency, particularly in oral and auditory skills. Reading was also the one which is least correlated.
 
+**Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
+
 ![image info](./images/RavenRT.png)
 ![image info](./images/RavenER.png)
 
-**Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
-* Raven Score is modestly correlated with English proficiency, particularly in reading and writing.
-* Higher cognitive ability (Raven Score) and English proficiency (CET 4 Score) are linked to lower error rates in second-language processing.
+Raven Score negatively correlated with all reaction time measures, with the strongest effects observed in RT_L2S (-0.2188) and RT_L2NS (-0.2141). This suggests that higher cognitive ability is associated with faster reaction times, particularly for second-language processing. The Raven Score also negatively correlated with error rates, with the strongest effects in ER_L2S (-0.2367) and ER_L2NS (-0.2365), implying that higher nonverbal reasoning ability reduces errors in second-language processing. Higher cognitive ability (Raven Score) and English proficiency (CET 4 Score) are linked to lower error rates in second-language processing.
 
-raven_RT_correlations: <br>
-'raven_score & RT_L1S': -0.10192948032642571, <br>
-'raven_score & RT_L1NS': -0.1627018508981041, <br>
-'raven_score & RT_L2S': -0.21882178716367187, <br>
-'raven_score & RT_L2NS': -0.21413055014757756<br>
-
-raven_ER_correlations: <br>
-'raven_score & ER_L1S': -0.027472844891422755, <br>
-'raven_score & ER_L1NS': -0.04825089641629403, <br>
-'raven_score & ER_L2S': -0.2367312466937776, <br>
-'raven_score & ER_L2NS': -0.23652282254830348<br>
+**CET 4 score** : national English proficiency test for non-English majors in China <br>
 
 ![image info](./images/CET4RT.png)
 ![image info](./images/CET4ER.png)
 
+CET 4 Score exhibited weak correlations with reaction times, with a small negative effect on RT_L2S (-0.0539) and RT_L2NS (-0.0732). This suggests that English proficiency has a minor impact on reaction time performance. Stronger negative correlations were found between CET 4 Score and error rates, particularly for ER_L2S (-0.2429) and ER_L2NS (-0.2727), suggesting that higher English proficiency reduces errors in second-language tasks.
 
-**CET 4 score** : national English proficiency test for non-English majors in China <br>
-* CET 4 Score exhibits stronger correlations with all English skills compare to Raven score, 
+* CET 4 Score exhibits stronger correlations with all English skills compare to Raven score except reading. 
+
 ![image info](./images/RavenCET_English.png)
-
-cet_4_RT_correlations: <br>
-'CET_4_score & RT_L1S': 0.02146256794702048, <br>
-'CET_4_score & RT_L1NS': 0.031085003279216688, <br>
-'CET_4_score & RT_L2S': -0.053926295229138145, <br>
-'CET_4_score & RT_L2NS': -0.07319903667206928<br>
-
-cet_4_ER_correlations: <br>
-'CET_4_score & ER_L1S': -0.09920154371578252, <br>
-'CET_4_score & ER_L1NS': -0.10498877572452256, <br>
-'CET_4_score & ER_L2S': -0.24290970386183677, <br>
-'CET_4_score & ER_L2NS': -0.272698476085984<br>
 
 
 ## Next Steps
