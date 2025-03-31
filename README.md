@@ -52,7 +52,7 @@ With a GLM, we can use one ore more regressors, or independent variables, to fit
 
 In FEAT analysis, the number of EV(Explanatory Variables) would be the number of regressors, and other settings, such as Basic shape, Convolution, Phase, temporal derivative, temporal filtering, would influence on beta weights and residuals for the general linear modeling.
 
-2. Correlation
+2. Correlation - for behavioral/participants data
 
 Correlation analysis is used to measure the strength and direction of the relationship between different variables. In this study, correlation analysis was performed to assess the relationships between cognitive scores, language proficiency measures, and reaction times. Pearson correlation coefficients were computed to quantify these relationships, providing insights into potential dependencies among variables.
 
@@ -136,19 +136,20 @@ CET 4 Score exhibited weak correlations with reaction times, with a small negati
 
 1. Preprocess the remaining dataset with the same setting
 
-The preprocessing is only done with sub-001. We need to apply preprocessing with the same setting to the reamining 76 subjects. I would write bash script to run the preprocessing and 1st-level analysis. The result would be the basis of the group analysis
+The initial preprocessing was performed only on subject sub-001. To ensure consistency across all subjects, the same preprocessing settings must be applied to the remaining 76 subjects. A Bash script will be developed to automate both preprocessing and first-level analysis for all participants.
 
 2. Feature Extraction
 
-* Extract relevant features from structural and task-related functional imaging data
-* Process behavioral data (e.g. reaction times, error rate, task_order, task_rule )
+Relevant features will be extracted from both structural and task-related functional imaging data to capture meaningful patterns related to brain structure and function.
 
-3. Model Training
+3. Data Analysis with modeling
+* 2nd-level analysis with brain data : Compute subject-wise parameter and contrast estimates by averaging first-level analysis results
+* 3rd-level analysis with brain data : Conduct a group-level analysis to calculate the standard error and mean of contrast estimates. Perform statistical significance tests to determine whether the observed contrast estimates are meaningful.
 * Apply linear regression using language proficiency scores, Age of English Acquisition, and extracted fMRI features
 * Optimize the model with evaluation
 
 4. Result Interpretation
-* Visualiza key findings using statistical plots and brain activation maps
+* Visualize key findings using statistical plots and brain activation maps to highlight meaningful patterns and relationships between brain activity and language proficiency.
 
 
 
