@@ -1,4 +1,4 @@
-YOUTUBE LINK: link
+YOUTUBE LINK: https://youtu.be/2Hw-wpDGh-E
 
 # Language and Cognition : the neural relationship
 
