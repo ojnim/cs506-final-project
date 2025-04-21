@@ -1,6 +1,115 @@
-YOUTUBE LINK: https://youtu.be/2Hw-wpDGh-E
+YOUTUBE LINK: 
 
 # Language and Cognition : the neural relationship
+
+## How to Build and Run the code
+Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file <br>
+
+How to build and run the code (Include this first so we know how to reproduce your results). There should be a makefile that installs all dependencies and builds the code. This is the most important part.
+
+Include test code and a GitHub workflow that runs the test code. Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
+
+### Steps
+
+1. Initial setup
+1) git clone https://github.com/ojnim/cs506-final-project.git
+2) install necessary libraries with Makefile
+3) get dataset
+```
+datalad clone https://github.com/OpenNeuroDatasets/ds005455.git data
+cd data
+datalad get *
+mkdir -p ../data/derivatives/figure
+```
+2. fMRI preprocessing work
+```
+bash /code/fMRIprep
+```
+3. Reproduce figures
+* python singletrial_plot
+* python tsnr_plot
+* python tsnr_plot_box
+
+
+## Visualizations of data
+Visualizations of data (interactive visualizations are highly encouraged).
+
+![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
+
+![image info](./images/Mean-tSNR_CognitiveControl.png)
+
+![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
+## Data Processing
+Description of data processing and modeling (what the code does).
+### fMRI data
+reference : https://github.com/GttNeuro/Guo-Lab_datapaper
+
+I was trying to replicate the preprocessing step, but found dataset that finished all the works.
+
+1. Transform raw data into the standardized "raw" in BIDS format 
+* HeuDiConv 
+* heuristic.py
+
+2. Run bash pydeface_run
+* pydeface_run
+
+3. Preprocessing Steps
+* dedate_run
+* fMRIprep
+* MakeConfounds
+* MakeEvents
+* MRIQC
+* FD_plot_box
+
+6. Run tsnr related
+* compute_tsnr
+* compute_mean_tsnr
+* tsnr_plot
+* tsnr_plot_box
+
+### Behavioral data
+
+## Modeling
+Description of data processing and modeling (what the code does).
+
+## Results
+Results showing that you achieved your goal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Data Processing Method
 
