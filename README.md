@@ -26,19 +26,23 @@ mkdir -p ../data/derivatives/figure
 bash /code/fMRIprep
 ```
 3. Reproduce figures
-* python singletrial_plot
-* python tsnr_plot
-* python tsnr_plot_box
-
+```
+cd code
+python singletrial_plot
+python tsnr_plot
+python tsnr_plot_box
+```
 
 ## Visualizations of data
-Visualizations of data (interactive visualizations are highly encouraged).
+
+![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
+![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
+
+![image info](./images/Mean-tSNR_CognitiveControl.png)
+![image info](./images/Mean-tSNR_LanguageControl.png)
 
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
 
-![image info](./images/Mean-tSNR_CognitiveControl.png)
-
-![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
 ## Data Processing
 Description of data processing and modeling (what the code does).
 ### fMRI data
