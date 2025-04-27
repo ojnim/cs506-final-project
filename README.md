@@ -2,25 +2,25 @@ YOUTUBE LINK:
 
 # Language and Cognition : the neural relationship
 
-## How to Build and Run the code
-Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file <br>
+## Initial setup for reproduction
 
+```
+git clone https://github.com/ojnim/cs506-final-project.git
+cd cs506-final-project
+make install
+datalad clone https://github.com/OpenNeuroDatasets/ds005455.git data
+cd data
+datalad get *
+mkdir -p ../data/derivatives/figure
+```
+
+## How to Build and Run the code
 How to build and run the code (Include this first so we know how to reproduce your results). There should be a makefile that installs all dependencies and builds the code. This is the most important part.
 
 Include test code and a GitHub workflow that runs the test code. Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
 
 ### Steps
 
-1. Initial setup
-1) git clone https://github.com/ojnim/cs506-final-project.git
-2) install necessary libraries with Makefile
-3) get dataset
-```
-datalad clone https://github.com/OpenNeuroDatasets/ds005455.git data
-cd data
-datalad get *
-mkdir -p ../data/derivatives/figure
-```
 2. fMRI preprocessing work
 ```
 bash /code/fMRIprep
@@ -44,9 +44,8 @@ python tsnr_plot_box
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
 
 ## Data Processing
-Description of data processing and modeling (what the code does).
+
 ### fMRI data
-reference : https://github.com/GttNeuro/Guo-Lab_datapaper
 
 I was trying to replicate the preprocessing step, but found dataset that finished all the works.
 
@@ -71,7 +70,13 @@ I was trying to replicate the preprocessing step, but found dataset that finishe
 * tsnr_plot
 * tsnr_plot_box
 
+Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
+
 ### Behavioral data
+
+Since the data is already cleaned and preprocessed by the data uploader and the null value was not found in the dataset, the original data was used for the analysis.
+
+**More info about data can be found in data_inspection.ipynb**
 
 ## Modeling
 Description of data processing and modeling (what the code does).
@@ -150,12 +155,6 @@ Summary registration, FMRI to standard space <br>
 ![image info](./images/registration.png)
 
 source: https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_04_Preprocessing.html
-
-### Behavioral / Participant Data
-
-Since the data is already cleaned and preprocessed by the data uploader and the null value was not found in the dataset, the original data was used for the analysis.
-
-**More info about data can be found in data_inspection.ipynb**
 
 ## Data Modeling Method
 
