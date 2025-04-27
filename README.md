@@ -2,7 +2,9 @@ YOUTUBE LINK:
 
 # Language and Cognition : the neural relationship
 
-## Initial setup for reproduction
+## How to Build and Run the code
+
+1.  Initial setup for reproduction
 
 ```
 git clone https://github.com/ojnim/cs506-final-project.git
@@ -13,25 +15,23 @@ cd data
 datalad get *
 mkdir -p ../data/derivatives/figure
 ```
+2. Reproduce Figures
 
-## How to Build and Run the code
-How to build and run the code (Include this first so we know how to reproduce your results). There should be a makefile that installs all dependencies and builds the code. This is the most important part.
-
-Include test code and a GitHub workflow that runs the test code. Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
-
-### Steps
-
-2. fMRI preprocessing work
-```
-bash /code/fMRIprep
-```
-3. Reproduce figures
 ```
 cd code
 python singletrial_plot
 python tsnr_plot
 python tsnr_plot_box
 ```
+3.  Reproduce Result
+* fMRI preprocessing
+```
+bash /code/fMRIprep
+```
+4. Test Code and a GitHub workflow that runs the test code
+
+Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
+
 
 ## Visualizations of data
 
