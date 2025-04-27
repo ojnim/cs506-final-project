@@ -17,7 +17,7 @@ img_list.sort(key=lambda x: (os.path.basename(x)))
 print("Image files found:", img_list)
 
 
-plot_data = pd.DataFrame(columns=['Voxel Value', 'Task', 'Subject'])
+plot_data = pd.DataFrame(columns=['Voxel Value','X' ,'Y' ,'Z','Task', 'Subject'])
 
 
 subjects = []
