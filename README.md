@@ -27,6 +27,7 @@ python tsnr_plot_box
 * fMRI preprocessing
 ```
 bash /code/fMRIprep
+bash /code/tsnrdata_to_csv
 ```
 4. Test Code and a GitHub workflow that runs the test code
 
@@ -35,13 +36,18 @@ Just test a few things you think are important - no need to overdo it on the tes
 
 ## Visualizations of data
 
+* Mean z for each task
 ![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
 ![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
 
+* Mean tSNR for each task
 ![image info](./images/Mean-tSNR_CognitiveControl.png)
 ![image info](./images/Mean-tSNR_LanguageControl.png)
 
+* Distribution of tSNR per participant and task
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
+<br>
+What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
 
 ## Data Processing
 
@@ -69,6 +75,10 @@ I was trying to replicate the preprocessing step, but found dataset that finishe
 * compute_mean_tsnr
 * tsnr_plot
 * tsnr_plot_box
+
+7. python analysis
+
+from (35327600, 3) to (12364487, 3)
 
 Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
 
