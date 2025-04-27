@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Script for collecting tSNR values into a DataFrame and saving it
+
 import os
 import re
 import pandas as pd
@@ -30,13 +32,18 @@ for img in img_list:
         if os.path.exists(tsnr):
             print(f"Processing {tsnr} for Subject {sub} and Task {task}")
             img_data = nib.load(tsnr)
-            voxel_data = img_data.get_fdata().flatten()
-            subjects = [f'sub-{sub}'] * len(voxel_data)  
-            
+            voxel_array = img_data.get_fdata()
+            voxel_indices = np.array(np.nonzero(np.ones_like(voxel_array))).T 
+            voxel_values = voxel_array.flatten()
+            x, y, z = voxel_indices[:, 0], voxel_indices[:, 1], voxel_indices[:, 2]
+
             temp_df = pd.DataFrame({
-                'Voxel Value': voxel_data,
+                'Voxel Value': voxel_values,
+                'X': x,
+                'Y': y,
+                'Z': z,
                 'Task': task,
-                'Subject': subjects
+                'Subject': f'sub-{sub}'
             })
             plot_data = pd.concat([plot_data, temp_df], ignore_index=True)
         else:
@@ -44,4 +51,13 @@ for img in img_list:
     except Exception as e:
         print(f"Error processing file {img}: {e}")
 
+if not plot_data.empty:
+    plot_data['Task'] = pd.Categorical(
+        plot_data['Task'],
+        categories=['LanguageControl', 'CognitiveControl'],
+        ordered=True
+    )
+    plot_data = plot_data.sort_values(by=['Task', 'Subject'])
+    
 plot_data.to_csv('../data_for_analysis/tsnr_voxel_data.csv', index=False)
+
