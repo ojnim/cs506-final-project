@@ -49,6 +49,8 @@ Just test a few things you think are important - no need to overdo it on the tes
 <br>
 What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
 
+![image info](./images/voxel_3d.gif)
+
 ## Data Processing
 
 ### fMRI data
@@ -98,36 +100,6 @@ Description of data processing and modeling (what the code does).
 
 ## Results
 Results showing that you achieved your goal.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
