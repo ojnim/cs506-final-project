@@ -2,6 +2,8 @@ numpy
 pandas
 matplotlib
 seaborn
+matplotlib.pyplot
+plotly.express
 sklearn.decomposition 
 sklearn.linear_model
 sklearn.ensemble
