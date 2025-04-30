@@ -31,6 +31,12 @@ bash /code/tsnrdata_to_csv
 ```
 4. Test Code and a GitHub workflow that runs the test code
 
+Since the size of original dataset is around 15 GB, most of the preprocessing work was done locally and data for test run was uploaded in data_for_test directory.
+
+```
+make train
+```
+
 Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
 
 ## Data
@@ -134,25 +140,4 @@ Detailed description of data processing done so far.
 
 1. Brain Extraction
 
-Since the original image includes skull and non-brain area, we need to remove those area to focus on brain tissue. FSL has brain extraction tool for preprocessing the data.
-
-One variable I experimented with was Fractional intensity threshold, which decides the brain outline estimate and how much to remove. The default value is 0.5, and smaller values give larger brain outline estimate. Among 0.7, 0.5, 0.3, 0.2, and 0.1, the value 0.2 resulted the best skullstripped image with removing skull and not missing brain tissue.
-
-* original data 
-![image info](./images/brain_original.png)
-* data after bet (Fractional Intensity Threshold = 0.2)
-![image info](./images/brain_bet.png)
-
 2. Other preprocessing settings
-
-Followings are the setting values for preprocessing
-
-* Motion Correction : MCFLIRT
-* Slice - Timing Correction : None (default)
-* Smoothing - Spatial smoothing FWMH (mm) : default 5.0
-* Registration and Normalization : Degree of Freedom 12
-
-Summary registration, FMRI to standard space <br>
-![image info](./images/registration.png)
-
-source: https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_04_Preprocessing.html
