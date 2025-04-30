@@ -53,38 +53,43 @@ What we can commonly observe accross different subjects is tSNR values of CogCon
 
 ### fMRI data
 
-I was trying to replicate the preprocessing step, but found dataset that finished all the works.
+For the brain data
 
-1. Transform raw data into the standardized "raw" in BIDS format 
-* HeuDiConv 
-* heuristic.py
+The templates for FSL group processing can be found in templates directory in.
 
-2. Run bash pydeface_run
-* pydeface_run
+1. Compute tsnr
 
-3. Preprocessing Steps
-* dedate_run
-* fMRIprep
-* MakeConfounds
-* MakeEvents
-* MRIQC
-* FD_plot_box
+tsnr is 
 
-6. Run tsnr related
 * compute_tsnr
 * compute_mean_tsnr
 * tsnr_plot
 * tsnr_plot_box
 
-7. python analysis
 
-from (35327600, 3) to (12364487, 3)
 
 Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
 
+2. transform data into analyzable format in python
+
+* tsnrdata_to_csv
+
+The csv file produced from tsnrdata_to_csv would contain
+
+Voxel Value
+X,Y,Z
+Task
+Subject
+
+3. 
+
+
+
 ### Behavioral data
 
-Since the data is already cleaned and preprocessed by the data uploader and the null value was not found in the dataset, the original data was used for the analysis.
+1. Language Task
+
+2. Cognitive Task
 
 **More info about data can be found in data_inspection.ipynb**
 
@@ -174,32 +179,10 @@ With a GLM, we can use one ore more regressors, or independent variables, to fit
 
 In FEAT analysis, the number of EV(Explanatory Variables) would be the number of regressors, and other settings, such as Basic shape, Convolution, Phase, temporal derivative, temporal filtering, would influence on beta weights and residuals for the general linear modeling.
 
-2. Correlation - for behavioral/participants data
-
-Correlation analysis is used to measure the strength and direction of the relationship between different variables. In this study, correlation analysis was performed to assess the relationships between cognitive scores, language proficiency measures, and reaction times. Pearson correlation coefficients were computed to quantify these relationships, providing insights into potential dependencies among variables.
-
-For instance, correlations were examined between Raven's Progressive Matrices scores and English proficiency measures (writing, listening, speaking, and reading), as well as between CET 4 scores and the same language skills. Additionally, age of acquisition (AoA) was correlated with various language and cognitive measures to investigate its impact on learning outcomes. 
-
-This method helps in selecting relevant features for further modeling and understanding the underlying structure of the data before applying more complex analytical techniques.
 
 ## Preliminary Results & Visualization of Data
 
 ### Brain Data
-Stats
-* Number of original EVs:2
-* EV1: SWITCH, EV2: NOTSWITCH
-* Basic shape: Custom (3 column format)
-* Convolution: Double_Gamma HRF
-* Phase: 0
-* NO temporal derivative, temporal filtering
-
-Contrasts & F-tests
-* Contrast: 1, F-tests: 0
-
-Post-stats
-* Thresholding: Cluster
-* Z threshold: 3.1
-* P threshold: 0.05
 
 **RESULT**
 
@@ -215,67 +198,12 @@ The red line(data) is the original BOLD graph, and green(cope partial model fit)
 * Red areas in the following image are the voxels which are statistically significant for each contrast <br>
 ![image info](./images/voxel_activation.png)
 
-### Behavior / Participants Data
-
-For midterm report, I focused on analyzing the correlation between various participant data variables to identify the most relevant features for modeling with brain data. Below, I summarize the key correlation patterns observed in the dataset.
-
-![image info](./images/AoA.png)
-
-* Age of Acquisition (AoA) & English Skills Correlations <br>
-AoA showed negative correlations with all English skills, with the strongest effects in listening (-0.1578), reading (-0.1550), and writing (-0.1445). This suggests that earlier exposure to English is associated with better language proficiency. Additionally, AoA negatively correlated with Raven Score (-0.3546) and CET 4 Score (-0.2343), implying that early language acquisition may be linked to higher cognitive and language proficiency.
-
-
-![image info](./images/AoARavenCET.png)
-
-Raven Score & CET 4 Score Correlation: 0.233705913960944 <br>
-
-* Chinese Langauge RT Correlations <br>
-Both RT_L1S and RT_L1NS exhibited negative correlations with Chinese language skills. The strongest effects were seen in speaking (-0.1922 for RT_L1S, -0.1355 for RT_L1NS) and writing (-0.1718 for RT_L1S, -0.1443 for RT_L1NS), indicating that faster reaction times may be associated with better proficiency in Chinese. Reading was the least correlated.
-
-* English Langauge RT Correlations <br>
-RT_L2S and RT_L2NS negatively correlated with English skills, particularly in listening (-0.2629 for RT_L2S, -0.2268 for RT_L2NS) and speaking (-0.2492 for RT_L2S, -0.2393 for RT_L2NS). This suggests that faster reaction times are linked to better English proficiency, particularly in oral and auditory skills. Reading was also the one which is least correlated.
 
 **Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
 
-![image info](./images/RavenRT.png)
-![image info](./images/RavenER.png)
-
-Raven Score negatively correlated with all reaction time measures, with the strongest effects observed in RT_L2S (-0.2188) and RT_L2NS (-0.2141). This suggests that higher cognitive ability is associated with faster reaction times, particularly for second-language processing. The Raven Score also negatively correlated with error rates, with the strongest effects in ER_L2S (-0.2367) and ER_L2NS (-0.2365), implying that higher nonverbal reasoning ability reduces errors in second-language processing. Higher cognitive ability (Raven Score) and English proficiency (CET 4 Score) are linked to lower error rates in second-language processing.
-
 **CET 4 score** : national English proficiency test for non-English majors in China <br>
 
-![image info](./images/CET4RT.png)
-![image info](./images/CET4ER.png)
 
-CET 4 Score exhibited weak correlations with reaction times, with a small negative effect on RT_L2S (-0.0539) and RT_L2NS (-0.0732). This suggests that English proficiency has a minor impact on reaction time performance. Stronger negative correlations were found between CET 4 Score and error rates, particularly for ER_L2S (-0.2429) and ER_L2NS (-0.2727), suggesting that higher English proficiency reduces errors in second-language tasks.
-
-* CET 4 Score exhibits stronger correlations with all English skills compare to Raven score except reading. 
-
-![image info](./images/RavenCET_English.png)
-
-
-## Next Steps
-
-1. Preprocess the remaining dataset with the same setting
-
-The initial preprocessing was performed only on subject sub-001. To ensure consistency across all subjects, the same preprocessing settings must be applied to the remaining 76 subjects. A Bash script will be developed to automate both preprocessing and first-level analysis for all participants.
-
-2. Feature Extraction
-
-Relevant features will be extracted from both structural and task-related functional imaging data to capture meaningful patterns related to brain structure and function.
-
-3. Data Analysis with modeling
-* 2nd-level analysis with brain data : Compute subject-wise parameter and contrast estimates by averaging first-level analysis results
-* 3rd-level analysis with brain data : Conduct a group-level analysis to calculate the standard error and mean of contrast estimates. Perform statistical significance tests to determine whether the observed contrast estimates are meaningful.
-* Apply linear regression using language proficiency scores, Age of English Acquisition, and extracted fMRI features
-* Optimize the model with evaluation
 
 4. Result Interpretation
 * Visualize key findings using statistical plots and brain activation maps to highlight meaningful patterns and relationships between brain activity and language proficiency.
-
-
-
-**Reference** <br>
-fMRI short course with fsl https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_Intro.html
-
-Machine learning in fMRI https://www.ehu.eus/ccwintco/uploads/f/f5/Feature_extraction_uji_2010.pdf
