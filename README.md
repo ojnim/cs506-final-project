@@ -66,8 +66,8 @@ The dataset consists of 77 subjects, and for each subject,
 ![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
 
 * Mean tSNR for each task
-![image info](./images/Mean-tSNR_CognitiveControl.png =150x)
-![image info](./images/Mean-tSNR_LanguageControl.png =150x)
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="200">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="200">
 
 * Distribution of tSNR per participant and task
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
