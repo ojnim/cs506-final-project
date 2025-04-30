@@ -4,6 +4,8 @@ YOUTUBE LINK:
 
 ## How to Build and Run the code
 
+**WARNING : the size of the dataset is around 15GB**
+
 1.  Initial setup for reproduction
 
 ```
@@ -29,11 +31,14 @@ python tsnr_plot_box
 bash /code/fMRIprep
 bash /code/tsnrdata_to_csv
 ```
-4. Test Code and a GitHub workflow that runs the test code
+4. **Test Code and a GitHub workflow that runs the test code**
 
 Since the size of original dataset is around 15 GB, most of the preprocessing work was done locally and data for test run was uploaded in data_for_test directory.
 
 ```
+git clone https://github.com/ojnim/cs506-final-project.git
+cd cs506-final-project
+make install
 make train
 ```
 
@@ -61,8 +66,8 @@ The dataset consists of 77 subjects, and for each subject,
 ![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
 
 * Mean tSNR for each task
-![image info](./images/Mean-tSNR_CognitiveControl.png)
-![image info](./images/Mean-tSNR_LanguageControl.png)
+![image info](./images/Mean-tSNR_CognitiveControl.png =150x)
+![image info](./images/Mean-tSNR_LanguageControl.png =150x)
 
 * Distribution of tSNR per participant and task
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
