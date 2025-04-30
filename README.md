@@ -33,8 +33,22 @@ bash /code/tsnrdata_to_csv
 
 Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
 
+## Data
 
-## Visualizations of data
+### Brain Data
+The dataset consists of 77 subjects, and for each subject, 
+* anatomical image - a brain image that serves as a structural reference for processing functional images
+* functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
+
+### Participants & Behavioral Data
+
+**Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
+
+**CET 4 score** : national English proficiency test for non-English majors in China <br>
+
+### Data Preprocessing
+
+## Visualizations
 
 * Mean z for each task
 ![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
@@ -98,6 +112,10 @@ Subject
 ## Modeling
 Description of data processing and modeling (what the code does).
 
+1. Brain Activation Analysis
+
+2. Brain Region Analysis
+
 ## Results
 Results showing that you achieved your goal.
 
@@ -110,10 +128,6 @@ Results showing that you achieved your goal.
 ## Data Processing Method
 
 ### Brain Data
-The dataset consists of 77 subjects, and for each subject, 
-* anatomical image - a brain image that serves as a structural reference for processing functional images
-* functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
-
 In data processing, I used FEAT, FSL's preprocessing tool. FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
 
 Detailed description of data processing done so far.
@@ -142,40 +156,3 @@ Summary registration, FMRI to standard space <br>
 ![image info](./images/registration.png)
 
 source: https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_04_Preprocessing.html
-
-## Data Modeling Method
-
-1. The General Linear Model - for brain data
-
-With a GLM, we can use one ore more regressors, or independent variables, to fit a model to some outcome measure, or dependent variable. To do this we compute numbers called beta weights, which are the relative weights assigned to each regressor to best fit the data. Any discrepancies between the model and the data are called residuals.
-
-In FEAT analysis, the number of EV(Explanatory Variables) would be the number of regressors, and other settings, such as Basic shape, Convolution, Phase, temporal derivative, temporal filtering, would influence on beta weights and residuals for the general linear modeling.
-
-
-## Preliminary Results & Visualization of Data
-
-### Brain Data
-
-**RESULT**
-
-* Followings are the results from the 1st-level analysis of brain data with sub-001 of Cognitive Control
-
-Time series graph of BOLD. Left is Switch and Right is Not Switch <br>
-![image info](./images/DesignMatrix.png)
-
-* The result from the general linear model<br>
-The red line(data) is the original BOLD graph, and green(cope partial model fit) and blue(full model fit) lines are the results of the GLM. 
-![image info](./images/1st-level_analysis.png)
-
-* Red areas in the following image are the voxels which are statistically significant for each contrast <br>
-![image info](./images/voxel_activation.png)
-
-
-**Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
-
-**CET 4 score** : national English proficiency test for non-English majors in China <br>
-
-
-
-4. Result Interpretation
-* Visualize key findings using statistical plots and brain activation maps to highlight meaningful patterns and relationships between brain activity and language proficiency.
