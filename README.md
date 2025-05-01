@@ -52,14 +52,15 @@ The dataset consists of 77 subjects, and for each subject,
 * anatomical image - a brain image that serves as a structural reference for processing functional images
 * functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
 
-In data processing, I used FEAT, FSL's preprocessing tool. FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
+In data processing, FSL's preprocessing tool FEAT was used for fMRI data preprocessing and computing the temporal signal-to-noise ratio . FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
+
+After preprocessing works, (e.g. brain extraction, motion correction, smoothing, and normalization) on Brain data was done, to verify the meaningful voxels to analyze, Temporal Signal-to-Noise Ratio was calculated wiht nilearn library.
 
 ### Participants & Behavioral Data
 
 **Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
 <br>
 <br>
-
 
 ## Visualizations
 

@@ -1,3 +1,4 @@
+nilearn
 numpy
 pandas
 matplotlib
