@@ -91,8 +91,8 @@ raven score : standardized intelligence test that assesses nonverbal reasoning a
 
 * Mean tSNR for each task : The mean temporal Signal-to-Noise Ratio (tSNR) map for both tasks (left: Cognitive, right: Language)
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="350">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="350">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="380">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="380">
 </p>
 
 * Distribution of tSNR per participant and task
