@@ -2,12 +2,8 @@ nilearn
 numpy
 pandas
 matplotlib
+plotly
 seaborn
 statsmodels
 jupyter
-matplotlib.pyplot
-plotly.express
-sklearn.decomposition 
-sklearn.linear_model
-sklearn.ensemble
-sklearn.cluster 
+scikit-learn
