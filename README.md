@@ -56,21 +56,25 @@ In data processing, FSL's preprocessing tool FEAT was used for fMRI data preproc
 
 After preprocessing works (e.g. brain extraction, motion correction, smoothing, and normalization) on Brain data was done through the bash script with preprocessing templates in templates directory, to verify the meaningful voxels to analyze, Temporal Signal-to-Noise Ratio was calculated with nilearn library and saved to csv file with Voxel Value, X, Y, Z, Task, and Subject columns.
 
-3. 
-
+From tsnr_voxel_data.csv, the rows whose Voxel Value is NaN are dropped.
 
 Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
 
 ### Participants & Behavioral Data
 
-**Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
+**Original Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
 <br>
 <br>
 
-1. Language Task
+1. Language Task <br>
+['age', 'AoA', 'CET_4_score','RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
-2. Cognitive Task
+For Language Task, the columns of self-reported language skills were excluded during the feature selection process since CET_4_score already reflects the participants' language ability and 
 
+2. Cognitive Task <br>
+['age', 'raven_score', 'RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
+
+For Cognitive Task, since 
 
 
 **More info about data can be found in data_inspection.ipynb**
