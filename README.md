@@ -98,23 +98,37 @@ raven score : standardized intelligence test that assesses nonverbal reasoning a
 * Distribution of tSNR per participant and task
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
 <br>
-What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
+What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl <br>
 
-
-* 3D visualization of Temporal Signal-to-Noise Ratio
+* 3D visualization of Temporal Signal-to-Noise Ratio in different brain region
 ![image info](./images/voxel_3d.gif)
 
 
 ## Modeling
-Description of data processing and modeling (what the code does).
 
-1. Brain Activation Analysis
+1. tSNR value correlation
+
+Model : Correlation
+
+For tSNR value correlation, the goal of modeling was to find the independent variables which have a meaningful relationship with tSNR value. 
 
 2. Brain Region Analysis
 
 Model : Linear Regression
 
-The reason linear regression was selected is to analyze relationships between continuous variables. In Brain Region Analysis, Dependent variable would be the voxel value, which is a continuous value from brain image.
+The reason linear regression was selected is to analyze relationships between continuous variables. For both Analysis, Dependent variable would be the tSNR value from each voxel, which is a continuous value from brain image.
+
+The linear regression model was trained with 80% of the data for each task and tested with the remaining 20% of the dataset. Finally for each voxel (x,y,z), R^2 score, p value for Age of Acquisition, p value for CET 4 score(Language Control), p value for raven score(Cognitive Control), and number of observation were saved in a dataFrame for each task. 
 
 ## Results
 Results showing that you achieved your goal.
+
+1. tSNR value prediction
+
+For both LanguageControl task and CognitiveControl task, 
+
+2. Brain Region Analysis
+
+## Future Steps
+
+Analysis with voxel activation data instead of tSNR data.
