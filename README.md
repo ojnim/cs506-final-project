@@ -28,8 +28,8 @@ python3 tsnr_plot_box
 3.  Reproduce Result
 ```
 bash code/tsnrdata_to_csv
+#Run All modeling.ipynb
 ```
-modeling.ipynb
 
 **4. Test Code and a GitHub workflow that runs the test code**
 
@@ -56,9 +56,11 @@ The dataset consists of 77 subjects, and for each subject,
 
 ### Participants & Behavioral Data
 
-**Raven Score** : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
-
-**CET 4 score** : national English proficiency test for non-English majors in China <br>
+**Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
+<br>
+Raven Score : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
+CET 4 score : national English proficiency test for non-English majors in China <br>
+RT_ : reaction time ; ER_ : error rate <br>
 
 
 ## Visualizations

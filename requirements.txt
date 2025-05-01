@@ -2,6 +2,8 @@ numpy
 pandas
 matplotlib
 seaborn
+statsmodels
+jupyter
 matplotlib.pyplot
 plotly.express
 sklearn.decomposition 
