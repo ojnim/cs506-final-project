@@ -102,13 +102,13 @@ Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DV
 ## Visualizations
 
 * Mean z for each task
-![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
-![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
+<img src="./images/Mean-z_task-CognitiveControl_vmax03.png" width="900">
+<img src="./images/Mean-z_task-LanguageControl_vmax03.png" width="900">
 
 * Mean tSNR for each task
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="400">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="400">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="450">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="450">
 </p>
 
 * Distribution of tSNR per participant and task
