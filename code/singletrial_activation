@@ -34,28 +34,35 @@ df = pd.DataFrame(data, columns=['sub', 'task', 'image'])
 task = 'CognitiveControl'
 task_images = df[df['task'] == task]['image'].tolist()
 if task_images:
-    mean_image = mean_img(task_images)
-    
-    # Get image data and affine
-    mean_data = mean_image.get_fdata()
-    affine = mean_image.affine
+    all_voxel_data = []
 
-    # Flatten data and get voxel coordinates
-    nonzero_indices = np.argwhere(mean_data != 0)
-    voxel_values = mean_data[mean_data != 0]
+    # Process each image (one per subject)
+    for idx, row in df[df['task'] == task].iterrows():
+        sub = row['sub']
+        image_path = row['image']
+        
+        img = nib.load(image_path)
+        img_data = img.get_fdata()
+        affine = img.affine
 
-    # Convert voxel indices to MNI coordinates
-    mni_coords = nib.affines.apply_affine(affine, nonzero_indices)
+        nonzero_indices = np.argwhere(img_data != 0)
+        voxel_values = img_data[img_data != 0]
+        mni_coords = nib.affines.apply_affine(affine, nonzero_indices)
+
+        subject_data = pd.DataFrame({
+            'subject': sub,
+            'x': mni_coords[:, 0],
+            'y': mni_coords[:, 1],
+            'z': mni_coords[:, 2],
+            'value': voxel_values
+        })
+        all_voxel_data.append(subject_data)
+
+    # Combine all subject-level voxel data
+    all_voxel_df = pd.concat(all_voxel_data, ignore_index=True)
 
     # Save to CSV
-    csv_data = pd.DataFrame({
-        'x': mni_coords[:, 0],
-        'y': mni_coords[:, 1],
-        'z': mni_coords[:, 2],
-        'value': voxel_values
-    })
+    csv_path = os.path.join(output_dir, f'VoxelData_task-{task}.csv')
+    all_voxel_df.to_csv(csv_path, index=False)
 
-    csv_path = os.path.join(output_dir, f'Mean-z_task-{task}_vmax03.csv')
-    csv_data.to_csv(csv_path, index=False)
-
-print("File have been saved in:", output_dir)
+    print(f"Detailed voxel-level data saved to: {csv_path}")
