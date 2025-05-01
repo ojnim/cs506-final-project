@@ -54,31 +54,7 @@ The dataset consists of 77 subjects, and for each subject,
 
 In data processing, FSL's preprocessing tool FEAT was used for fMRI data preprocessing and computing the temporal signal-to-noise ratio . FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
 
-After preprocessing works, (e.g. brain extraction, motion correction, smoothing, and normalization) on Brain data was done, to verify the meaningful voxels to analyze, Temporal Signal-to-Noise Ratio was calculated wiht nilearn library.
-
-For the brain data
-
-The templates for FSL group processing can be found in templates directory in.
-
-1. Compute tsnr
-
-tsnr is 
-
-* compute_tsnr
-* compute_mean_tsnr
-* tsnr_plot
-* tsnr_plot_box
-
-2. transform data into analyzable format in python
-
-* tsnrdata_to_csv
-
-The csv file produced from tsnrdata_to_csv would contain
-
-Voxel Value
-X,Y,Z
-Task
-Subject
+After preprocessing works (e.g. brain extraction, motion correction, smoothing, and normalization) on Brain data was done through the bash script with preprocessing templates in templates directory, to verify the meaningful voxels to analyze, Temporal Signal-to-Noise Ratio was calculated with nilearn library and saved to csv file with Voxel Value, X, Y, Z, Task, and Subject columns.
 
 3. 
 
@@ -107,8 +83,8 @@ Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DV
 
 * Mean tSNR for each task
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="450">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="450">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="420">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="420">
 </p>
 
 * Distribution of tSNR per participant and task
@@ -127,6 +103,10 @@ Description of data processing and modeling (what the code does).
 1. Brain Activation Analysis
 
 2. Brain Region Analysis
+
+Model : Linear Regression
+
+The reason linear regression was selected is to analyze relationships between continuous variables. In Brain Region Analysis, Dependent variable would be the voxel value, which is a continuous value from brain image.
 
 ## Results
 Results showing that you achieved your goal.
