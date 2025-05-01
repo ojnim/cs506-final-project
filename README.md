@@ -26,19 +26,20 @@ python3 tsnr_plot
 python3 tsnr_plot_box
 ```
 3.  Reproduce Result
-* fMRI preprocessing
 ```
-bash code/fMRIprep
 bash code/tsnrdata_to_csv
 ```
-4. **Test Code and a GitHub workflow that runs the test code**
+modeling.ipynb
 
-Since the size of original dataset is around 15 GB, most of the preprocessing work was done locally and data for test run was uploaded in data_for_test directory.
+**4. Test Code and a GitHub workflow that runs the test code**
+
+Since the size of original dataset is around 15 GB, the initial stage of preprocessed were completed locally, and 10 subjects out of 77 were sampled for test. The sample data is in data_for_test directory.
 
 ```
 git clone https://github.com/ojnim/cs506-final-project.git
 cd cs506-final-project
 make install
+make preprocess
 make train
 ```
 
