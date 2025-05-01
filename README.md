@@ -64,19 +64,18 @@ Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DV
 
 **Original Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
 <br>
-<br>
 
-For the analysis of both Tasks, Reaction Time and Error Rate columns are included since they are collected during the experiment.
+For the analysis of both Tasks, Reaction Time and Error Rate columns are included since they are collected during the experiment. he columns of self-reported language skills were excluded during the feature selection process since the other column alreay relects the participants' language ability and its subjectivity. However, they were utilized during the correlation analysis in feature selection process to identify which columns shows meaningful relationship with language abilities.
 
 1. Language Task Features<br>
 ['age', 'AoA', 'CET_4_score','RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
-For Language Task, the columns of self-reported language skills were excluded during the feature selection process since CET_4_score already reflects the participants' language ability. raven score column was excluded since it is a "standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns".
+CET 4 : national English proficiency test for non-English majors in China
 
 2. Cognitive Task Features<br>
 ['age', 'raven_score', 'RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
-For Cognitive Task, CET_4_score column was excluded since CET 4 is a "national English proficiency test for non-English majors in China", which is not related to the participant's cognitive ability.
+raven score : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns
 
 
 **More info about data can be found in data_inspection.ipynb**
