@@ -52,15 +52,13 @@ The dataset consists of 77 subjects, and for each subject,
 * anatomical image - a brain image that serves as a structural reference for processing functional images
 * functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
 
-
+In data processing, I used FEAT, FSL's preprocessing tool. FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
 
 ### Participants & Behavioral Data
 
 **Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
 <br>
-Raven Score : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns. <br>
-CET 4 score : national English proficiency test for non-English majors in China <br>
-RT_ : reaction time ; ER_ : error rate <br>
+<br>
 
 
 ## Visualizations
@@ -71,8 +69,8 @@ RT_ : reaction time ; ER_ : error rate <br>
 
 * Mean tSNR for each task
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="400">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="400">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="350">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="350">
 </p>
 
 * Distribution of tSNR per participant and task
@@ -137,20 +135,3 @@ Description of data processing and modeling (what the code does).
 
 ## Results
 Results showing that you achieved your goal.
-
-
-
-
-
-
-
-## Data Processing Method
-
-### Brain Data
-In data processing, I used FEAT, FSL's preprocessing tool. FSL is a comprehensive library of analysis tools for functional, structural, and diffusion MRI brain imaging data, developed by the Analysis Group at FMRIB in Oxford.
-
-Detailed description of data processing done so far.
-
-1. Brain Extraction
-
-2. Other preprocessing settings
