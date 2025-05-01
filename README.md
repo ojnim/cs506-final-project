@@ -27,7 +27,9 @@ python3 tsnr_plot_box
 ```
 3.  Reproduce Result
 ```
-bash code/tsnrdata_to_csv
+cd code
+python3 tsnrdata_to_csv
+python3 singletrial_activation
 #Run All modeling.ipynb
 ```
 
@@ -82,14 +84,15 @@ raven score : standardized intelligence test that assesses nonverbal reasoning a
 
 ## Visualizations
 
-* Mean z for each task
+* Mean z for each task : The mean of single-trial fMRI activation estimates for both tasks. They are averaged across 77 subjects.
+
 <img src="./images/Mean-z_task-CognitiveControl_vmax03.png" width="900">
 <img src="./images/Mean-z_task-LanguageControl_vmax03.png" width="900">
 
-* Mean tSNR for each task
+* Mean tSNR for each task : The mean temporal Signal-to-Noise Ratio (tSNR) map for both tasks (left: Cognitive, right: Language)
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="420">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="420">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="400">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="400">
 </p>
 
 * Distribution of tSNR per participant and task
