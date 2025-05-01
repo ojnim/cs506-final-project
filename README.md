@@ -56,37 +56,6 @@ In data processing, FSL's preprocessing tool FEAT was used for fMRI data preproc
 
 After preprocessing works, (e.g. brain extraction, motion correction, smoothing, and normalization) on Brain data was done, to verify the meaningful voxels to analyze, Temporal Signal-to-Noise Ratio was calculated wiht nilearn library.
 
-### Participants & Behavioral Data
-
-**Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
-<br>
-<br>
-
-## Visualizations
-
-* Mean z for each task
-![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
-![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
-
-* Mean tSNR for each task
-<p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="350">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="350">
-</p>
-
-* Distribution of tSNR per participant and task
-![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
-<br>
-What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
-
-
-* 3D visualization of Temporal Signal-to-Noise Ratio
-![image info](./images/voxel_3d.gif)
-
-## Data Processing
-
-### fMRI data
-
 For the brain data
 
 The templates for FSL group processing can be found in templates directory in.
@@ -99,10 +68,6 @@ tsnr is
 * compute_mean_tsnr
 * tsnr_plot
 * tsnr_plot_box
-
-
-
-Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
 
 2. transform data into analyzable format in python
 
@@ -118,14 +83,43 @@ Subject
 3. 
 
 
+Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DVS-Lab/srndna-datapaper?tab=readme-ov-file 
 
-### Behavioral data
+### Participants & Behavioral Data
+
+**Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
+<br>
+<br>
 
 1. Language Task
 
 2. Cognitive Task
 
+
+
 **More info about data can be found in data_inspection.ipynb**
+
+## Visualizations
+
+* Mean z for each task
+![image info](./images/Mean-z_task-CognitiveControl_vmax03.png)
+![image info](./images/Mean-z_task-LanguageControl_vmax03.png)
+
+* Mean tSNR for each task
+<p>
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="400">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="400">
+</p>
+
+* Distribution of tSNR per participant and task
+![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
+<br>
+What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
+
+
+* 3D visualization of Temporal Signal-to-Noise Ratio
+![image info](./images/voxel_3d.gif)
+
 
 ## Modeling
 Description of data processing and modeling (what the code does).
