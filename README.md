@@ -21,15 +21,15 @@ mkdir -p ../data/derivatives/figure
 
 ```
 cd code
-python singletrial_plot
-python tsnr_plot
-python tsnr_plot_box
+python3 singletrial_plot
+python3 tsnr_plot
+python3 tsnr_plot_box
 ```
 3.  Reproduce Result
 * fMRI preprocessing
 ```
-bash /code/fMRIprep
-bash /code/tsnrdata_to_csv
+bash code/fMRIprep
+bash code/tsnrdata_to_csv
 ```
 4. **Test Code and a GitHub workflow that runs the test code**
 
@@ -42,14 +42,16 @@ make install
 make train
 ```
 
-Just test a few things you think are important - no need to overdo it on the testing front, since that’s not the focus of the project.
+## Data Preprocessing
 
-## Data
+This project is based on https://github.com/OpenNeuroDatasets/ds005455.git and some codes and scripts are modified from https://github.com/GttNeuro/Guo-Lab_datapaper.
 
 ### Brain Data
 The dataset consists of 77 subjects, and for each subject, 
 * anatomical image - a brain image that serves as a structural reference for processing functional images
 * functional image - a series of brain image captured over multiple runs of experiment. It has lower resolution compare to anatomical image.
+
+
 
 ### Participants & Behavioral Data
 
@@ -57,7 +59,6 @@ The dataset consists of 77 subjects, and for each subject,
 
 **CET 4 score** : national English proficiency test for non-English majors in China <br>
 
-### Data Preprocessing
 
 ## Visualizations
 
@@ -67,8 +68,8 @@ The dataset consists of 77 subjects, and for each subject,
 
 * Mean tSNR for each task
 <p>
-<img src="./images/Mean-tSNR_CognitiveControl.png" width="300">
-<img src="./images/Mean-tSNR_LanguageControl.png" width="300">
+<img src="./images/Mean-tSNR_CognitiveControl.png" width="400">
+<img src="./images/Mean-tSNR_LanguageControl.png" width="400">
 </p>
 
 * Distribution of tSNR per participant and task
@@ -76,6 +77,8 @@ The dataset consists of 77 subjects, and for each subject,
 <br>
 What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl
 
+
+* 3D visualization of Temporal Signal-to-Noise Ratio
 ![image info](./images/voxel_3d.gif)
 
 ## Data Processing

@@ -90,5 +90,5 @@ cog_d = pd.merge(
 
 
 #convert to data file for training
-lang_d.to_csv('./data_for_analysis/LanguageControl_data.csv', index=False)
-cog_d.to_csv('./data_for_analysis/CognitiveControl_data.csv', index=False)
+lang_d.to_csv('./data_for_test/LanguageControl_data.csv', index=False)
+cog_d.to_csv('./data_for_test/CognitiveControl_data.csv', index=False)
