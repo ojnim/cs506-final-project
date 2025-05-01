@@ -49,7 +49,7 @@ Language_ER = ["ER_L1S","ER_L1NS","ER_L2S","ER_L2NS"]
 
 
 participants_lang = data_participants[ ['participant_id', 'age', 'AoA',"CET_4_score"]+Language_RT+Language_ER]
-participants_cog = data_participants[ ['participant_id', 'age', "raven_score"]+Language_RT+Language_ER]
+participants_cog = data_participants[ ['participant_id', 'age', 'AoA', "raven_score"]+Language_RT+Language_ER]
 
 
 

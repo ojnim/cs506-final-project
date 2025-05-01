@@ -15,3 +15,5 @@ participants_pool = cog['participant_id'].unique().tolist()
 train_participants, test_participants = train_test_split(
     participants_pool, test_size=0.2, random_state=42
 )
+
+#Brain Region Analysis

@@ -73,12 +73,12 @@ For the analysis of both Tasks, Reaction Time and Error Rate columns are include
 CET 4 : national English proficiency test for non-English majors in China
 
 2. Cognitive Task Features<br>
-['age', 'raven_score', 'RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
+['age', 'AoA', 'raven_score', 'RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
 raven score : standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns
 
 
-**More info about data can be found in data_inspection.ipynb**
+**More info about Participants & Behavioral Data can be found in data_inspection.ipynb, behavioral_data_analysis.ipynb**
 
 ## Visualizations
 
