@@ -66,15 +66,17 @@ Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DV
 <br>
 <br>
 
-1. Language Task <br>
+For the analysis of both Tasks, Reaction Time and Error Rate columns are included since they are collected during the experiment.
+
+1. Language Task Features<br>
 ['age', 'AoA', 'CET_4_score','RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
-For Language Task, the columns of self-reported language skills were excluded during the feature selection process since CET_4_score already reflects the participants' language ability and 
+For Language Task, the columns of self-reported language skills were excluded during the feature selection process since CET_4_score already reflects the participants' language ability. raven score column was excluded since it is a "standardized intelligence test that assesses nonverbal reasoning and problem-solving skills through visual patterns".
 
-2. Cognitive Task <br>
+2. Cognitive Task Features<br>
 ['age', 'raven_score', 'RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
 
-For Cognitive Task, since 
+For Cognitive Task, CET_4_score column was excluded since CET 4 is a "national English proficiency test for non-English majors in China", which is not related to the participant's cognitive ability.
 
 
 **More info about data can be found in data_inspection.ipynb**
