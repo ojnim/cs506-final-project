@@ -1,68 +1,76 @@
 #!/usr/bin/env python
 
-# Script for ploting an image of the mean single-trial estimates for each task
+# Script for plotting per-subject single-trial voxel data with MNI coordinates
 
-# Adapted from code available in the GitHub repository (https://github.com/GttNeuro/Guo-Lab_datapaper)
-
+# Adapted from: https://github.com/GttNeuro/Guo-Lab_datapaper
 
 import os
 import nibabel as nib
 import pandas as pd
-from nilearn.image import mean_img
 import numpy as np
-import re  
+import re
 
+# Set paths
 root = '../data/derivatives/singletrial'
 output_dir = '../data_for_analysis'
+os.makedirs(output_dir, exist_ok=True)
 
-
+# Gather relevant image paths
 data = []
 for sub in os.listdir(root):
-
     if '001' <= sub.split('-')[1] <= '077':
         sub_dir = os.path.join(root, sub)
         if os.path.isdir(sub_dir):
             for file in os.listdir(sub_dir):
-
                 if file.endswith('singletrial-Act.nii.gz') and 'task-CognitiveControl' in file:
-                    task = re.search('task-(.*)_run', file).group(1)
+                    task = re.search(r'task-(.*)_run', file).group(1)
                     file_path = os.path.join(sub_dir, file)
                     data.append([sub, task, file_path])
 
 df = pd.DataFrame(data, columns=['sub', 'task', 'image'])
 
+# Filter for the task of interest
 task = 'CognitiveControl'
-task_images = df[df['task'] == task]['image'].tolist()
-if task_images:
-    all_voxel_data = []
+task_df = df[df['task'] == task]
 
-    # Process each image (one per subject)
-    for idx, row in df[df['task'] == task].iterrows():
-        sub = row['sub']
-        image_path = row['image']
-        
-        img = nib.load(image_path)
-        img_data = img.get_fdata()
-        affine = img.affine
+# Process each subject's image
+all_voxel_data = []
 
-        nonzero_indices = np.argwhere(img_data != 0)
-        voxel_values = img_data[img_data != 0]
-        mni_coords = nib.affines.apply_affine(affine, nonzero_indices)
+for idx, row in task_df.iterrows():
+    sub = row['sub']
+    image_path = row['image']
+    
+    img = nib.load(image_path)
+    img_data = img.get_fdata()
+    affine = img.affine
 
-        subject_data = pd.DataFrame({
-            'subject': sub,
-            'x': mni_coords[:, 0],
-            'y': mni_coords[:, 1],
-            'z': mni_coords[:, 2],
-            'value': voxel_values
-        })
-        all_voxel_data.append(subject_data)
+    # Get non-zero voxel indices and values
+    nonzero_indices = np.argwhere(img_data != 0)
+    voxel_values = img_data[img_data != 0]
 
-    # Combine all subject-level voxel data
-    all_voxel_df = pd.concat(all_voxel_data, ignore_index=True)
+    # Convert voxel indices to homogeneous coordinates
+    ones = np.ones((nonzero_indices.shape[0], 1))
+    homogeneous_vox = np.hstack([nonzero_indices, ones])  # Shape (N, 4)
 
-    # Save to CSV
-    csv_path = os.path.join(output_dir, f'VoxelData_task-{task}.csv')
-    all_voxel_df.to_csv(csv_path, index=False)
+    # Apply affine transformation to get MNI coordinates
+    mni_coords = (affine @ homogeneous_vox.T).T[:, :3]  # Shape (N, 3)
 
-    print(f"Detailed voxel-level data saved to: {csv_path}")
+    # Store data with subject ID
+    subject_data = pd.DataFrame({
+        'subject': sub,
+        'x': mni_coords[:, 0],
+        'y': mni_coords[:, 1],
+        'z': mni_coords[:, 2],
+        'value': voxel_values
+    })
+
+    all_voxel_data.append(subject_data)
+
+# Combine all into a single DataFrame
+all_voxel_df = pd.concat(all_voxel_data, ignore_index=True)
+
+# Save to CSV
+csv_path = os.path.join(output_dir, f'VoxelData_task-{task}.csv')
+all_voxel_df.to_csv(csv_path, index=False)
+
+print(f"Detailed voxel-level data saved to: {csv_path}")
