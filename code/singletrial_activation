@@ -24,14 +24,14 @@ for sub in os.listdir(root):
         if os.path.isdir(sub_dir):
             for file in os.listdir(sub_dir):
 
-                if file.endswith('singletrial-Act.nii.gz') and 'task-LanguageControl' in file:
+                if file.endswith('singletrial-Act.nii.gz') and 'task-CognitiveControl' in file:
                     task = re.search('task-(.*)_run', file).group(1)
                     file_path = os.path.join(sub_dir, file)
                     data.append([sub, task, file_path])
 
 df = pd.DataFrame(data, columns=['sub', 'task', 'image'])
 
-task = 'LanguageControl'
+task = 'CognitiveControl'
 task_images = df[df['task'] == task]['image'].tolist()
 if task_images:
     mean_image = mean_img(task_images)
@@ -58,4 +58,4 @@ if task_images:
     csv_path = os.path.join(output_dir, f'Mean-z_task-{task}_vmax03.csv')
     csv_data.to_csv(csv_path, index=False)
 
-print("Image have been saved in:", output_dir)
+print("File have been saved in:", output_dir)
