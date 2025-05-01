@@ -35,8 +35,11 @@ python3 singletrial_activation
 
 **4. Test Code and a GitHub workflow that runs the test code**
 
+The workflow can be found in modeling.ipynb 
+
 Since the size of original dataset is around 15 GB, the initial stage of preprocessed were completed locally, and 10 subjects out of 77 were sampled for test. The sample data is in data_for_test directory.
 
+Following is the sample run of the analysis.
 ```
 git clone https://github.com/ojnim/cs506-final-project.git
 cd cs506-final-project
@@ -110,7 +113,7 @@ What we can commonly observe accross different subjects is tSNR values of CogCon
 
 Model : Correlation
 
-For tSNR value correlation, the goal of modeling was to find the independent variables which have a meaningful relationship with tSNR value. 
+To explore the relationship between brain signal quality and individual differences, a correlation analysis with the tSNR (temporal Signal-to-Noise Ratio) values was conducted. The objective was to identify which independent variables are meaningfully associated with tSNR, a voxel-wise measure derived from brain imaging data.
 
 2. Brain Region Analysis
 
