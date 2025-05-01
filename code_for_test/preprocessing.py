@@ -43,16 +43,12 @@ data_sub = data_fMRI.rename(columns={'Subject':"participant_id"})
 
 data_participants = pd.read_csv("./data_for_analysis/participants.tsv" , sep='\t')
 data_participants = pd.DataFrame(data_participants)
-data_participants = data_participants.rename(columns={'Chinese_writing': "C_wr", "Chinese_listening":"C_li","Chinese_speaking":"C_sp","Chinese_reading":"C_re",
-                                                      "English_writing":"E_wr", "English_listening":"E_li", "English_speaking":"E_sp", "English_reading":"E_re"})
 
 Language_RT = ["RT_L1S","RT_L1NS","RT_L2S","RT_L2NS"]
 Language_ER = ["ER_L1S","ER_L1NS","ER_L2S","ER_L2NS"]
 
-chinese_skills = ["C_wr", "C_li", "C_sp", "C_re"]
-english_skills = ["E_wr", "E_li", "E_sp", "E_re"]
 
-participants_lang = data_participants[ ['participant_id', 'age', 'AoA',"CET_4_score"]+chinese_skills+english_skills+Language_RT+Language_ER]
+participants_lang = data_participants[ ['participant_id', 'age', 'AoA',"CET_4_score"]+Language_RT+Language_ER]
 participants_cog = data_participants[ ['participant_id', 'age', "raven_score"]+Language_RT+Language_ER]
 
 
