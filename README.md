@@ -127,6 +127,8 @@ Results showing that you achieved your goal.
 
 For both LanguageControl task and CognitiveControl task, 
 
+![image info](./images/tSNR_correlation.png)
+
 2. Brain Region Analysis
 
 ## Future Steps
