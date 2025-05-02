@@ -136,7 +136,12 @@ For both LanguageControl task and CognitiveControl task,
 
 2. Brain Region Analysis
 
+A Jaccard index of 0.214 suggests a moderate amount of overlap between Language Control task and Cognitive Control task. It implies that AoA affects both language and cognitive control, but possibly in distinct neural regions.
+
 ![image info](./images/AoA_overlap.gif)
+[View 3D Voxel Overlap Plot](voxel_overlap_plot.html)
+
+In this 3D visualization of overlapped voxels, it can be observed that 
 
 ## Future Steps
 
