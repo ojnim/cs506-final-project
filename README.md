@@ -127,9 +127,9 @@ In neuroscience field, a good R-squared value generally falls between 0.7 and 0.
 
 ## Results
 
-1. tSNR value prediction
+1. tSNR value correlation
 
-For both LanguageControl task and CognitiveControl task, 
+For both LanguageControl task and CognitiveControl task, correlation value between tSNR value and features turned out to be similar.
 
 ![image info](./images/tSNR_correlation.png)
 
@@ -138,9 +138,9 @@ For both LanguageControl task and CognitiveControl task,
 A Jaccard index of 0.214 suggests a moderate amount of overlap between Language Control task and Cognitive Control task. It implies that AoA affects both language and cognitive control, but possibly in distinct neural regions.
 
 ![image info](./images/AoA_overlap.gif)
-* git clone this repo and access voxel_overlap_plot.html
+* git clone this repo and access voxel_overlap_plot.html to interact to this visualization
 
-In this 3D visualization of overlapped voxels, it was observed that 
+In this 3D visualization of overlapped voxels, it was observed that overlapped voxels are significantly concentrated near corpus callosum, whose main function is  facilitating communication and transfering information between the left and right hemispheres of the brain.
 
 ## Future Steps
 
