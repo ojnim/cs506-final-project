@@ -126,7 +126,6 @@ The linear regression model was trained with 80% of the data for each task and t
 In neuroscience field, a good R-squared value generally falls between 0.7 and 0.9. Therefore, when filtering the voxel groups, 0.8 was used as a threshold value, and to minigate the overfitting problem, the rows with R^2 over 0.95 were removed. P value for each participant features were set as 0.05.
 
 ## Results
-Results showing that you achieved your goal.
 
 1. tSNR value prediction
 
@@ -139,12 +138,16 @@ For both LanguageControl task and CognitiveControl task,
 A Jaccard index of 0.214 suggests a moderate amount of overlap between Language Control task and Cognitive Control task. It implies that AoA affects both language and cognitive control, but possibly in distinct neural regions.
 
 ![image info](./images/AoA_overlap.gif)
-[View 3D Voxel Overlap Plot](voxel_overlap_plot.html)
+* git clone this repo and access voxel_overlap_plot.html
 
-In this 3D visualization of overlapped voxels, it can be observed that 
+In this 3D visualization of overlapped voxels, it was observed that 
 
 ## Future Steps
 
-Analysis with voxel activation data instead of tSNR data.
+1. Voxel Value Prediction
 
-singletrial_activation.py file in code directory
+While the data for BOLD activation was prepared with singletrial_activation file in code directory, the analysis on activation was not completed due to the lack of time and computing resources. Therefore, in the future, the analysis on this data can be completed with using tSNR data as a quality threshold.
+
+2. Brain Region Analysis
+
+Functional or anatomical brain regions can be compared to the X,Y,Z coordinates of overlapped voxels. The possible questions can be "Are overlaps located in a specific brain region (e.g., frontal lobe)?"
