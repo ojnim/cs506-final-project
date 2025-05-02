@@ -129,9 +129,11 @@ In neuroscience field, a good R-squared value generally falls between 0.7 and 0.
 
 1. tSNR value correlation
 
-For both LanguageControl task and CognitiveControl task, correlation value between tSNR value and features turned out to be similar.
+For both LanguageControl task and CognitiveControl task, correlation value between tSNR value and features turned out to be similar. Z-coordinate (Z) has the strongest positive correlation (0.3) in both tasks. This likely means higher voxel values are associated with more superior (top) brain regions. Most other correlations are small in magnitude (between -0.05 and +0.03), suggesting weak direct linear associations.
 
 ![image info](./images/tSNR_correlation.png)
+
+The Z-coordinate dominates correlation, suggesting location in the brain matters more than behavior measures in voxel value variation. Language-related metrics (CET-4, AoA) show weak but present correlations in the language task. Raven score and RT/ER features in the cognitive task also show small effects. All behavioral measures have weak correlations, implying more complex (nonlinear or localized) relationships, or that voxel values are affected by other unmodeled factors.
 
 2. Brain Region Analysis
 
@@ -140,7 +142,7 @@ A Jaccard index of 0.214 suggests a moderate amount of overlap between Language 
 ![image info](./images/AoA_overlap.gif)
 * git clone this repo and access voxel_overlap_plot.html to interact to this visualization
 
-In this 3D visualization of overlapped voxels, it was observed that overlapped voxels are significantly concentrated near corpus callosum, whose main function is  facilitating communication and transfering information between the left and right hemispheres of the brain.
+In this 3D visualization of overlapped voxels, it was observed that overlapped voxels are significantly concentrated near corpus callosum, whose main function is  facilitating communication and transferring information between the left and right hemispheres of the brain.
 
 ## Future Steps
 
