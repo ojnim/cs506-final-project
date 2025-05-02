@@ -136,7 +136,7 @@ For both LanguageControl task and CognitiveControl task,
 
 2. Brain Region Analysis
 
-![image info](./images/AoA_overlap.png)
+![image info](./images/AoA_overlap.gif)
 
 ## Future Steps
 
