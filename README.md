@@ -100,8 +100,6 @@ raven score : standardized intelligence test that assesses nonverbal reasoning a
 
 * Distribution of tSNR per participant and task
 ![image info](./images/Distribution_of_tSNR_per_participant_and_task_redblue.png)
-<br>
-What we can commonly observe accross different subjects is tSNR values of CogControl taks are higher than the values of LangControl <br>
 
 * 3D visualization of Temporal Signal-to-Noise Ratio in different brain region
 ![image info](./images/voxel_3d.gif)
@@ -154,4 +152,4 @@ While the data for BOLD activation was prepared with singletrial_activation file
 
 2. Brain Region Analysis
 
-Functional or anatomical brain regions can be compared to the X,Y,Z coordinates of overlapped voxels. The possible questions can be "Are overlaps located in a specific brain region (e.g., frontal lobe)?"
+Functional or anatomical brain regions can be compared to the X,Y,Z coordinates of overlapped voxels.
