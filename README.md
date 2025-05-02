@@ -123,7 +123,7 @@ The reason linear regression was selected is to analyze relationships between co
 
 The linear regression model was trained with 80% of the data for each task and tested with the remaining 20% of the dataset. Finally for each voxel (x,y,z), R^2 score, p value for Age of Acquisition, p value for CET 4 score(Language Control), p value for raven score(Cognitive Control), and number of observation were saved in a dataFrame for each task. 
 
-In neuroscience field, a good R-squared value generally falls between 0.7 and 0.9. Therefore, when filtering the voxel groups, 0.8 was used as a threshold value, and p value for each participant features were set as 0.05.
+In neuroscience field, a good R-squared value generally falls between 0.7 and 0.9. Therefore, when filtering the voxel groups, 0.8 was used as a threshold value, and to minigate the overfitting problem, the rows with R^2 over 0.95 were removed. P value for each participant features were set as 0.05.
 
 ## Results
 Results showing that you achieved your goal.
@@ -135,6 +135,8 @@ For both LanguageControl task and CognitiveControl task,
 ![image info](./images/tSNR_correlation.png)
 
 2. Brain Region Analysis
+
+![image info](./images/AoA_overlap.png)
 
 ## Future Steps
 
