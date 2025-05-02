@@ -70,7 +70,7 @@ Reference: https://github.com/GttNeuro/Guo-Lab_datapaper , https://github.com/DV
 **Original Columns** : 'participant_id', 'age', 'sex', 'task_order', 'task_rule', 'AoA', "RT_L1S","RT_L1NS","RT_L2S","RT_L2NS", "ER_L1S","ER_L1NS","ER_L2S","ER_L2NS","raven_score", "CET_4_score", "Chinese_writing", "Chinese_listening", "Chinese_speaking", "Chinese_reading", "English_writing", "English_listening", "English_speaking", "English_reading"
 <br>
 
-For the analysis of both Tasks, Reaction Time and Error Rate columns are included since they are collected during the experiment. he columns of self-reported language skills were excluded during the feature selection process since the other column alreay relects the participants' language ability and its subjectivity. However, they were utilized during the correlation analysis in feature selection process to identify which columns shows meaningful relationship with language abilities.
+For the analysis of both Tasks, Reaction Time and Error Rate columns are included since they are collected during the experiment. The columns of self-reported language skills were excluded during the feature selection process since the other column already relflects the participants' language ability and the value itself is subjective. However, they were utilized during the correlation analysis in feature selection process to identify which columns shows meaningful relationship with language abilities.
 
 1. Language Task Features<br>
 ['age', 'AoA', 'CET_4_score','RT_L1S', 'RT_L1NS', 'RT_L2S', 'RT_L2NS','ER_L1S', 'ER_L1NS', 'ER_L2S', 'ER_L2NS']
@@ -119,11 +119,11 @@ To explore the relationship between brain signal quality and individual differen
 
 Model : Linear Regression
 
-The reason linear regression was selected is to analyze relationships between continuous variables. For both Analysis, Dependent variable would be the tSNR value from each voxel, which is a continuous value from brain image.
+The reason linear regression was selected is to analyze relationships between continuous variables. For the Analysis, Dependent variable would be the tSNR value from each voxel, which is a continuous value from brain image.
 
 The linear regression model was trained with 80% of the data for each task and tested with the remaining 20% of the dataset. Finally for each voxel (x,y,z), R^2 score, p value for Age of Acquisition, p value for CET 4 score(Language Control), p value for raven score(Cognitive Control), and number of observation were saved in a dataFrame for each task. 
 
-In neuroscience field, a good R-squared value generally falls between 0.7 and 0.9. Therefore, when filtering the voxel groups, 0.8 was used as a threshold value, and to minigate the overfitting problem, the rows with R^2 over 0.95 were removed. P value for each participant features were set as 0.05.
+In neuroscience field, a good R-squared value generally falls between 0.7 and 0.9. Therefore, when filtering the voxel groups, 0.8 was used as a threshold value, and to mitigate the overfitting problem, the rows with R^2 over 0.95 were removed. P value for each participant features were set as 0.05.
 
 ## Results
 
@@ -137,7 +137,9 @@ The Z-coordinate dominates correlation, suggesting location in the brain matters
 
 2. Brain Region Analysis
 
-A Jaccard index of 0.214 suggests a moderate amount of overlap between Language Control task and Cognitive Control task. It implies that AoA affects both language and cognitive control, but possibly in distinct neural regions.
+As a result of modeling, 3089 voxel groups for Language Control and 4459 voxel groups for Cognitive Control remained after filtered with p value for Age of Acquisition. 
+
+A Jaccard index of 0.214 between two suggests a moderate amount of overlap between Language Control task and Cognitive Control task. It implies that AoA affects both language and cognitive control, but possibly in distinct neural regions.
 
 ![image info](./images/AoA_overlap.gif)
 * git clone this repo and access voxel_overlap_plot.html to interact to this visualization
